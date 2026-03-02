@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Transport and Safety Authority (NTSA) | Iterin Immigration</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8922a;--accent-light:#e8b84b;--light:#f5f7fa;--text:#333;--text-light:#666;--dark:#0d2137;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Sans 3',sans-serif;color:var(--text);}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+/* TOP BAR */
+.top-bar{background:var(--dark);color:rgba(255,255,255,.85);font-size:13px;padding:8px 0;}
+.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.top-bar a{color:rgba(255,255,255,.85);text-decoration:none;}
+.top-bar a:hover{color:var(--accent-light);}
+.top-bar .ti{display:flex;gap:22px;flex-wrap:wrap;}
+.top-bar .ci{display:flex;align-items:center;gap:7px;}
+.top-bar .ci .ic{width:18px;height:18px;background:var(--accent);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9px;}
+.top-bar .cl{display:flex;gap:10px;align-items:center;}
+.top-bar .cb{background:var(--accent);color:#fff!important;padding:4px 14px;border-radius:3px;font-weight:600;font-size:12px;transition:background .2s;}
+.top-bar .cb:hover{background:var(--accent-light);}
+/* NAV */
+nav{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.1);position:sticky;top:0;z-index:999;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1200px;margin:0 auto;}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--primary),var(--dark));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:700;}
+.logo-text .brand{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--primary);}
+.logo-text .sub{font-size:11px;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;}
+.nav-menu{display:flex;list-style:none;gap:2px;align-items:center;}
+.nav-menu>li{position:relative;}
+.nav-menu>li>a{display:block;padding:10px 13px;color:var(--primary);text-decoration:none;font-weight:600;font-size:14px;border-radius:4px;transition:all .2s;}
+.nav-menu>li>a:hover,.nav-menu>li.active>a{background:var(--light);color:var(--accent);}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:240px;box-shadow:0 8px 30px rgba(0,0,0,.12);border-top:3px solid var(--accent);z-index:1000;list-style:none;}
+.dropdown li a{display:block;padding:10px 18px;font-size:13px;color:var(--primary);text-decoration:none;border-bottom:1px solid #f0f0f0;transition:all .2s;}
+.dropdown li a:hover{background:var(--light);color:var(--accent);padding-left:24px;}
+.nav-menu>li:hover>.dropdown{display:block;}
+.sub-dd{position:relative;}
+.sub-dd>a::after{content:" ›";float:right;}
+.sub-dd>.dropdown{top:0;left:100%;}
+.sub-dd:hover>.dropdown{display:block;}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 20px!important;border-radius:4px;}
+.nav-cta:hover{background:var(--primary)!important;}
+/* FOOTER */
+.site-footer{background:var(--dark);color:#fff;padding:60px 0 0;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px;padding-bottom:50px;}
+.footer-col h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--accent-light);margin-bottom:20px;}
+.footer-col p{color:rgba(255,255,255,.7);font-size:14px;line-height:1.8;margin-bottom:12px;}
+.fci{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;}
+.fci-icon{width:34px;height:34px;flex-shrink:0;background:var(--accent);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.fci-text .lbl{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.fci-text a{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px;}
+.fci-text a:hover{color:var(--accent-light);}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:9px;}
+.footer-col ul li a{color:rgba(255,255,255,.7);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.footer-col ul li a::before{content:"›";color:var(--accent);}
+.footer-col ul li a:hover{color:var(--accent-light);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:18px;text-align:center;font-size:13px;color:rgba(255,255,255,.45);}
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--dark) 0%,var(--primary) 100%);padding:60px 0 50px;position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat;pointer-events:none;}
+.page-hero .container{position:relative;z-index:1;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:14px;}
+.breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent-light);}
+.breadcrumb span{color:var(--accent-light);}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);color:#fff;margin-bottom:12px;}
+.page-hero p{color:rgba(255,255,255,.75);font-size:16px;max-width:600px;line-height:1.7;}
+/* SERVICE PAGE LAYOUT */
+.service-page{padding:70px 0;background:var(--light);}
+.service-layout{display:grid;grid-template-columns:1fr 300px;gap:36px;align-items:start;}
+.service-main{background:#fff;border-radius:8px;padding:40px;box-shadow:0 3px 16px rgba(0,0,0,.06);}
+.service-main h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--primary);margin-bottom:8px;}
+.service-main .subtitle{color:var(--accent);font-weight:600;font-size:14px;margin-bottom:20px;}
+.service-divider{width:60px;height:3px;background:var(--accent);margin-bottom:24px;}
+.service-main p{color:var(--text-light);line-height:1.85;margin-bottom:16px;font-size:15px;}
+.service-main h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--primary);margin:28px 0 14px;}
+.service-img{width:100%;border-radius:6px;margin-bottom:28px;object-fit:cover;height:280px;display:block;}
+/* class list */
+.class-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 24px;}
+.class-list li{background:var(--light);border:1px solid #dde3ea;border-radius:4px;padding:12px 16px;font-size:14px;color:var(--primary);font-weight:600;display:flex;align-items:center;gap:8px;}
+.class-list li::before{content:"✓";color:var(--accent);font-weight:700;}
+/* passes list */
+.passes-list{margin:20px 0;}
+.pass-card{border:1px solid #e8edf3;border-radius:6px;margin-bottom:16px;overflow:hidden;}
+.pass-card-head{background:var(--primary);color:#fff;padding:14px 20px;font-family:'Playfair Display',serif;font-size:17px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.pass-card-head .toggle{font-size:20px;line-height:1;}
+.pass-card-body{padding:18px 20px;display:none;}
+.pass-card-body p{color:var(--text-light);font-size:14px;line-height:1.8;margin:0;}
+.pass-card.open .pass-card-body{display:block;}
+.pass-card.open .pass-card-head{background:var(--accent);}
+/* sidebar */
+.service-sidebar{position:sticky;top:80px;}
+.sidebar-box{background:#fff;border-radius:6px;padding:26px;box-shadow:0 3px 16px rgba(0,0,0,.06);margin-bottom:22px;}
+.sidebar-box h4{font-family:'Playfair Display',serif;font-size:17px;color:var(--primary);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--light);}
+.sb-nav{list-style:none;}
+.sb-nav li{border-bottom:1px solid #f0f0f0;}
+.sb-nav li a{display:flex;align-items:center;justify-content:space-between;padding:10px 0;color:var(--primary);text-decoration:none;font-size:13px;font-weight:600;transition:color .2s;}
+.sb-nav li a:hover,.sb-nav li.active a{color:var(--accent);}
+.sb-nav li a::after{content:"›";color:var(--accent);font-size:18px;}
+.sidebar-cta{background:linear-gradient(135deg,var(--primary),var(--dark));border-radius:6px;padding:26px;text-align:center;color:#fff;}
+.sidebar-cta h4{font-family:'Playfair Display',serif;font-size:17px;margin-bottom:10px;}
+.sidebar-cta p{font-size:13px;opacity:.85;margin-bottom:14px;line-height:1.6;}
+.sidebar-cta a{display:block;background:var(--accent);color:#fff;padding:11px;border-radius:4px;font-weight:700;font-size:13px;text-decoration:none;margin-bottom:9px;transition:background .2s;}
+.sidebar-cta a:hover{background:var(--accent-light);}
+.sidebar-cta .sc-phone{font-size:15px;font-weight:700;color:var(--accent-light);margin-top:10px;}
+/* btn */
+.btn-consult{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:13px 28px;border-radius:4px;font-weight:700;font-size:14px;text-decoration:none;margin-top:20px;transition:all .2s;}
+.btn-consult:hover{background:var(--primary);transform:translateY(-2px);}
+/* responsive */
+@media(max-width:900px){.service-layout{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+@media(max-width:700px){.nav-menu{display:none;}.class-list{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="ti">
+      <div class="ci"><span class="ic">✉</span><a href="mailto:info@iterinimmigration.co.ke">info@iterinimmigration.co.ke</a></div>
+      <div class="ci"><span class="ic">📞</span><a href="tel:+254115250930">+254 115 250 930</a></div>
+      <div class="ci"><span class="ic">📍</span><span>Kaunda Street, Standard Building, 5th Floor</span></div>
+    </div>
+    <div class="cl">
+      <a href="../#team">Our Team</a>
+      <a href="https://wa.me/254115250930" class="cb">WhatsApp</a>
+      <a href="../#contact" class="cb">Free Consultation</a>
+    </div>
+  </div>
+</div>
+
+
+<nav>
+  <div class="nav-inner">
+    <a href="../" class="logo">
+      <div class="logo-icon">II</div>
+      <div class="logo-text">
+        <div class="brand">Iterin Immigration</div>
+        <div class="sub">Kenya's Trusted Consultants</div>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="../">Home</a></li>
+      <li><a href="../#about">About Us</a></li>
+      <li class="active">
+        <a href="../#services">Services ▾</a>
+        <ul class="dropdown">
+          <li><a href="./entry-work-permits.html">Entry Work Permits</a></li>
+          <li class="sub-dd">
+            <a href="./passes.html">Passes</a>
+            <ul class="dropdown">
+              <li><a href="./special-pass.html">Special Pass Application</a></li>
+              <li><a href="./students-pass.html">Students Pass</a></li>
+              <li><a href="./dependant-pass.html">Dependant Pass Application</a></li>
+              <li><a href="./kenya-visitors-pass.html">Kenya Visitors Pass</a></li>
+              <li><a href="./reentry-pass.html">Re-entry Pass Application</a></li>
+              <li><a href="./visitors-pass-extension.html">Visitors Pass Extension</a></li>
+            </ul>
+          </li>
+          <li><a href="./citizenship.html">Citizenship</a></li>
+          <li><a href="./permanent-residency.html">Permanent Residency Status</a></li>
+          <li><a href="./alien-registration.html">Alien Card / Foreign National Certificate</a></li>
+          <li><a href="./relocation-settlement.html">Relocation &amp; General Settlement</a></li>
+          <li><a href="./regularization.html">Regularization</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="./govt-services.html">Govt. Services ▾</a>
+        <ul class="dropdown">
+          <li><a href="./business-registration.html">Business Registration</a></li>
+          <li><a href="./kenya-revenue-authority.html">Kenya Revenue Authority</a></li>
+          <li><a href="./ntsa.html">National Transport &amp; Safety Authority</a></li>
+          <li><a href="./marriage-in-kenya.html">Marriage in Kenya</a></li>
+        </ul>
+      </li>
+      <li><a href="../#blog">Blog</a></li>
+      <li><a href="../#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../">Home</a> &rsaquo;
+      <a href="../#services">Services</a> &rsaquo;
+      <span>NTSA Services</span>
+    </div>
+    <h1>National Transport and Safety Authority (NTSA)</h1>
+    <p>We assist with NTSA vehicle registration, driving licence applications, and all transport-related government services in Kenya.</p>
+  </div>
+</div>
+
+<section class="service-page">
+  <div class="container">
+    <div class="service-layout">
+      <main class="service-main">
+        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=900&q=80" alt="National Transport and Safety Authority (NTSA)" class="service-img">
+        
+<h2>National Transport and Safety Authority (NTSA) Services</h2>
+<div class="subtitle">Vehicle Registration, Driving Licences &amp; Motor Vehicle Services</div>
+<div class="service-divider"></div>
+<p>The National Transport and Safety Authority (NTSA) is responsible for the regulation of road transport in Kenya, including vehicle registration, driving licence issuance, and road safety enforcement. For expatriates and new residents in Kenya, navigating NTSA processes can be complex. We provide full support across all NTSA services.</p>
+<h3>NTSA Services We Assist With</h3>
+<ul class="class-list">
+  <li>Vehicle Registration</li>
+  <li>Transfer of Vehicle Ownership</li>
+  <li>Foreign Driving Licence Conversion</li>
+  <li>Kenya Driving Licence Application</li>
+  <li>Driving Licence Renewal</li>
+  <li>TIMS Account Setup</li>
+  <li>Motor Vehicle Inspection Booking</li>
+  <li>Number Plate Services</li>
+</ul>
+<h3>Foreign Driving Licences</h3>
+<p>Foreign nationals residing in Kenya for an extended period are required to convert their foreign driving licence to a Kenyan licence. We assist with the full conversion process including TIMS registration, inspection booking, and submission of required documents to the NTSA.</p>
+<h3>Vehicle Import and Registration</h3>
+<p>If you are bringing a vehicle into Kenya from abroad, we assist with all import-related NTSA requirements including registration in Kenya, obtaining Kenyan number plates, and ensuring all documentation is in order for legal road use.</p>
+
+        <a href="../#contact" class="btn-consult">📋 Book Free Consultation</a>
+      </main>
+      
+<aside class="service-sidebar">
+  <div class="sidebar-box">
+    <h4>All Services</h4>
+    <ul class="sb-nav">
+      <li ><a href="./entry-work-permits.html">Entry Work Permits</a></li>
+      <li ><a href="./passes.html">Passes Overview</a></li>
+      <li ><a href="./special-pass.html">Special Pass</a></li>
+      <li ><a href="./students-pass.html">Students Pass</a></li>
+      <li ><a href="./dependant-pass.html">Dependant Pass</a></li>
+      <li ><a href="./kenya-visitors-pass.html">Kenya Visitors Pass</a></li>
+      <li ><a href="./reentry-pass.html">Re-entry Pass</a></li>
+      <li ><a href="./visitors-pass-extension.html">Visitors Pass Extension</a></li>
+      <li ><a href="./citizenship.html">Citizenship</a></li>
+      <li ><a href="./permanent-residency.html">Permanent Residency</a></li>
+      <li ><a href="./alien-registration.html">Alien Card (ARC)</a></li>
+      <li ><a href="./relocation-settlement.html">Relocation &amp; Settlement</a></li>
+      <li ><a href="./regularization.html">Regularization</a></li>
+      <li ><a href="./govt-services.html">Govt. Services</a></li>
+      <li ><a href="./business-registration.html">Business Registration</a></li>
+      <li ><a href="./kenya-revenue-authority.html">Kenya Revenue Authority</a></li>
+      <li class="active"><a href="./ntsa.html">NTSA Services</a></li>
+      <li ><a href="./marriage-in-kenya.html">Marriage in Kenya</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-cta">
+    <h4>Need Assistance?</h4>
+    <p>Free initial consultation available. Speak with an expert today.</p>
+    <a href="https://wa.me/254115250930">WhatsApp Us Now</a>
+    <a href="../#contact">Book Consultation</a>
+    <div class="sc-phone">📞 +254 115 250 930</div>
+  </div>
+</aside>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Iterin Immigration</h4>
+        <p>A Government-authorized immigration consultancy delivering expert, compliant immigration services across Kenya. Your trusted partner for permits, passes, citizenship and settlement.</p>
+        <div class="fci"><div class="fci-icon">📍</div><div class="fci-text"><div class="lbl">Address</div><a href="#">Standard Building, 5th Floor, Kaunda Street, Nairobi</a></div></div>
+        <div class="fci"><div class="fci-icon">📞</div><div class="fci-text"><div class="lbl">Phone</div><a href="tel:+254115250930">+254 115 250 930</a></div></div>
+        <div class="fci"><div class="fci-icon">✉</div><div class="fci-text"><div class="lbl">Email</div><a href="mailto:info@iterinimmigration.co.ke">info@iterinimmigration.co.ke</a></div></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="../#about">About Us</a></li>
+          <li><a href="../#team">Our Team</a></li>
+          <li><a href="../#services">Services</a></li>
+          <li><a href="../#location">Find Us</a></li>
+          <li><a href="../#blog">Blog</a></li>
+          <li><a href="../#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="./entry-work-permits.html">Entry Work Permits</a></li>
+          <li><a href="./passes.html">Passes</a></li>
+          <li><a href="./citizenship.html">Citizenship</a></li>
+          <li><a href="./permanent-residency.html">Permanent Residency</a></li>
+          <li><a href="./alien-registration.html">Alien Card (ARC)</a></li>
+          <li><a href="./relocation-settlement.html">Relocation &amp; Settlement</a></li>
+          <li><a href="./regularization.html">Regularization</a></li>
+          <li><a href="./govt-services.html">Govt. Services</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">Copyright &copy; 2025 Iterin Immigration. All Rights Reserved. | Standard Building, 5th Floor, Kaunda Street, Nairobi</div>
+</footer>
+
+
+<script>
+// Accordion for passes
+document.querySelectorAll('.pass-card-head').forEach(h=>{
+  h.addEventListener('click',()=>{
+    h.parentElement.classList.toggle('open');
+    h.querySelector('.toggle').textContent = h.parentElement.classList.contains('open') ? '−' : '+';
+  });
+});
+</script>
+
+</body>
+</html>
