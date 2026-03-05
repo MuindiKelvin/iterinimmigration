@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iterin Immigration | Trusted Kenya Immigration Consultants</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1a3a5c;
+  --accent: #c8922a;
+  --accent-light: #e8b84b;
+  --light: #f5f7fa;
+  --text: #333;
+  --text-light: #666;
+  --dark: #0d2137;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Source Sans 3', sans-serif; color:var(--text); }
+
+/* TOP BAR */
+.top-bar { background:var(--dark); color:rgba(255,255,255,.85); font-size:13px; padding:8px 0; }
+.top-bar .container { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+.top-bar a { color:rgba(255,255,255,.85); text-decoration:none; }
+.top-bar a:hover { color:var(--accent-light); }
+.top-bar .contact-items { display:flex; gap:22px; flex-wrap:wrap; }
+.top-bar .contact-item { display:flex; align-items:center; gap:7px; }
+.top-bar .contact-item .icon { width:18px; height:18px; background:var(--accent); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:9px; }
+.top-bar .cta-links { display:flex; gap:10px; align-items:center; }
+.top-bar .cta-btn { background:var(--accent); color:#fff !important; padding:4px 14px; border-radius:3px; font-weight:600; font-size:12px; transition:background .2s; }
+.top-bar .cta-btn:hover { background:var(--accent-light); }
+
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
+
+/* NAV */
+nav { background:#fff; box-shadow:0 2px 15px rgba(0,0,0,.1); position:sticky; top:0; z-index:999; }
+.nav-inner { display:flex; align-items:center; justify-content:space-between; padding:12px 20px; max-width:1200px; margin:0 auto; }
+.logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.logo-icon { width:50px; height:50px; background:linear-gradient(135deg,var(--primary),var(--dark)); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; font-weight:700; }
+.logo-text .brand { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--primary); }
+.logo-text .sub { font-size:11px; color:var(--text-light); letter-spacing:1px; text-transform:uppercase; }
+.nav-menu { display:flex; list-style:none; gap:2px; align-items:center; }
+.nav-menu > li { position:relative; }
+.nav-menu > li > a { display:block; padding:10px 13px; color:var(--primary); text-decoration:none; font-weight:600; font-size:14px; border-radius:4px; transition:all .2s; }
+.nav-menu > li > a:hover, .nav-menu > li.active > a { background:var(--light); color:var(--accent); }
+.dropdown { display:none; position:absolute; top:100%; left:0; background:#fff; min-width:240px; box-shadow:0 8px 30px rgba(0,0,0,.12); border-top:3px solid var(--accent); z-index:1000; list-style:none; }
+.dropdown li a { display:block; padding:10px 18px; font-size:13px; color:var(--primary); text-decoration:none; border-bottom:1px solid #f0f0f0; transition:all .2s; }
+.dropdown li a:hover { background:var(--light); color:var(--accent); padding-left:24px; }
+.nav-menu > li:hover > .dropdown { display:block; }
+.sub-dd { position:relative; }
+.sub-dd > a::after { content:" ›"; float:right; }
+.sub-dd > .dropdown { top:0; left:100%; }
+.sub-dd:hover > .dropdown { display:block; }
+.nav-cta { background:var(--accent) !important; color:#fff !important; padding:10px 20px !important; border-radius:4px; }
+.nav-cta:hover { background:var(--primary) !important; }
+
+/* HERO */
+.hero { position:relative; height:90vh; min-height:500px; overflow:hidden; }
+.slides { height:100%; }
+.slide { position:absolute; inset:0; opacity:0; transition:opacity .8s ease; pointer-events:none; }
+.slide.active { opacity:1; pointer-events:auto; }
+.slide-bg { position:absolute; inset:0; background-size:cover; background-position:center; }
+.slide.active .slide-bg { animation:zoomIn 8s ease forwards; }
+@keyframes zoomIn { from{transform:scale(1.06)} to{transform:scale(1)} }
+.slide::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(13,33,55,.88) 0%,rgba(13,33,55,.5) 60%,transparent 100%); }
+.slide-content { position:absolute; bottom:0; left:0; z-index:2; padding:60px; max-width:700px; }
+.slide.active .slide-content { animation:slideUp .8s ease .2s both; }
+@keyframes slideUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+.badge { display:inline-block; background:var(--accent); color:#fff; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:6px 16px; border-radius:2px; margin-bottom:16px; }
+.slide-content h1 { font-family:'Playfair Display',serif; font-size:clamp(30px,5vw,56px); color:#fff; line-height:1.15; margin-bottom:16px; }
+.slide-content h1 span { color:var(--accent-light); }
+.slide-content p { color:rgba(255,255,255,.88); font-size:17px; line-height:1.7; margin-bottom:28px; }
+.slide-btns { display:flex; gap:14px; flex-wrap:wrap; }
+.btn-primary { background:var(--accent); color:#fff; padding:14px 30px; text-decoration:none; font-weight:700; font-size:14px; border-radius:4px; transition:all .2s; display:inline-block; }
+.btn-primary:hover { background:var(--accent-light); transform:translateY(-2px); }
+.btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.6); padding:14px 30px; text-decoration:none; font-weight:700; font-size:14px; border-radius:4px; transition:all .2s; display:inline-block; }
+.btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.1); }
+.slider-controls { position:absolute; bottom:30px; left:60px; z-index:3; display:flex; gap:10px; }
+.dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,.4); cursor:pointer; border:2px solid transparent; transition:all .3s; }
+.dot.active { background:var(--accent); border-color:var(--accent-light); transform:scale(1.3); }
+.slider-arrows { position:absolute; bottom:24px; right:40px; z-index:3; display:flex; gap:8px; }
+.arrow { width:44px; height:44px; background:rgba(255,255,255,.15); border:2px solid rgba(255,255,255,.4); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:18px; transition:all .2s; }
+.arrow:hover { background:var(--accent); border-color:var(--accent); }
+
+/* COMMON */
+section { padding:80px 0; }
+.section-tag { font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.section-title { font-family:'Playfair Display',serif; font-size:clamp(26px,4vw,40px); color:var(--primary); line-height:1.25; margin-bottom:16px; }
+.section-title span { color:var(--accent); }
+.section-divider { width:60px; height:3px; background:var(--accent); margin-bottom:20px; }
+
+/* ABOUT */
+.about { background:#fff; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+.about-img-wrap { position:relative; }
+.about-img-wrap img { width:100%; border-radius:4px; display:block; object-fit:cover; height:480px; }
+.about-badge { position:absolute; bottom:30px; right:-20px; background:var(--accent); color:#fff; padding:20px 24px; border-radius:4px; text-align:center; box-shadow:0 8px 30px rgba(200,146,42,.4); }
+.about-badge .years { font-family:'Playfair Display',serif; font-size:42px; font-weight:700; line-height:1; }
+.about-badge .label { font-size:12px; letter-spacing:1px; text-transform:uppercase; opacity:.9; }
+.about-text p { color:var(--text-light); line-height:1.8; margin-bottom:16px; }
+.about-founder { display:flex; align-items:center; gap:16px; margin-top:28px; padding-top:24px; border-top:2px solid var(--light); }
+.founder-avatar { width:60px; height:60px; background:linear-gradient(135deg,var(--primary),var(--dark)); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-family:'Playfair Display',serif; font-size:22px; font-weight:700; flex-shrink:0; }
+.founder-info .name { font-weight:700; color:var(--primary); font-size:16px; }
+.founder-info .role { color:var(--accent); font-size:13px; }
+
+/* SERVICES */
+.services { background:var(--light); }
+.services-header { text-align:center; margin-bottom:50px; }
+.services-header .section-divider { margin:0 auto 20px; }
+.services-header p { color:var(--text-light); max-width:560px; margin:0 auto; font-size:16px; line-height:1.7; }
+.services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:28px; }
+.service-card { background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 3px 16px rgba(0,0,0,.07); transition:all .3s; display:flex; flex-direction:column; }
+.service-card:hover { box-shadow:0 12px 40px rgba(0,0,0,.15); transform:translateY(-6px); }
+.service-card-img { height:200px; overflow:hidden; position:relative; }
+.service-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+.service-card:hover .service-card-img img { transform:scale(1.08); }
+.service-card-body { padding:26px; flex:1; display:flex; flex-direction:column; }
+.service-card-body h3 { font-family:'Playfair Display',serif; font-size:21px; color:var(--primary); margin-bottom:12px; line-height:1.3; }
+.service-card-body p { color:var(--text-light); font-size:14px; line-height:1.7; margin-bottom:16px; flex:1; }
+.service-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px; }
+.service-tags span { background:var(--light); color:var(--primary); font-size:11px; padding:4px 10px; border-radius:12px; font-weight:600; border:1px solid #dde3ea; }
+.service-link { color:var(--accent); font-weight:700; font-size:14px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap .2s; margin-top:auto; }
+.service-link:hover { gap:12px; color:var(--primary); }
+.service-link::after { content:"→"; font-size:16px; }
+
+/* TEAM */
+.team { background:#fff; }
+.team-header { text-align:center; margin-bottom:48px; }
+.team-header .section-divider { margin:0 auto 20px; }
+.team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:24px; }
+.team-card { text-align:center; cursor:pointer; }
+.team-photo { width:160px; height:160px; border-radius:50%; margin:0 auto 16px; position:relative; overflow:hidden; border:4px solid var(--light); transition:border-color .3s; }
+.team-photo:hover { border-color:var(--accent); }
+.team-photo img { width:100%; height:100%; object-fit:cover; }
+.photo-overlay { position:absolute; inset:0; background:rgba(26,58,92,.85); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .3s; }
+.team-photo:hover .photo-overlay { opacity:1; }
+.photo-overlay span { color:#fff; font-size:13px; font-weight:600; border:2px solid rgba(255,255,255,.6); padding:6px 14px; border-radius:20px; }
+.team-card h3 { font-family:'Playfair Display',serif; font-size:17px; color:var(--primary); margin-bottom:4px; }
+.team-card .role { font-size:13px; color:var(--accent); font-weight:600; }
+
+/* STATS */
+.stats { background:linear-gradient(135deg,var(--primary),var(--dark)); padding:70px 0; position:relative; overflow:hidden; }
+.stats::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:40px; text-align:center; position:relative; }
+.stat-number { font-family:'Playfair Display',serif; font-size:52px; font-weight:700; color:var(--accent-light); line-height:1; margin-bottom:8px; }
+.stat-label { font-size:14px; color:rgba(255,255,255,.75); text-transform:uppercase; letter-spacing:2px; font-weight:600; }
+
+/* EMERGENCY CTA */
+.emergency-cta { background:var(--accent); padding:30px 0; }
+.emergency-cta .inner { display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; text-align:center; }
+.emergency-cta .phone-label { font-size:14px; color:rgba(255,255,255,.85); margin-bottom:4px; }
+.emergency-cta .e-phone { font-family:'Playfair Display',serif; font-size:26px; color:#fff; font-weight:700; }
+.emergency-cta p { color:rgba(255,255,255,.9); font-size:15px; max-width:500px; }
+.btn-white { background:#fff; color:var(--accent); padding:14px 28px; border-radius:4px; font-weight:700; font-size:14px; text-decoration:none; white-space:nowrap; transition:all .2s; }
+.btn-white:hover { background:var(--primary); color:#fff; }
+
+/* WHY CHOOSE */
+.why-us { background:var(--light); }
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+.why-img img { width:100%; height:420px; object-fit:cover; border-radius:6px; }
+.why-features { display:grid; gap:20px; margin-top:24px; }
+.why-feature { display:flex; gap:16px; align-items:flex-start; }
+.why-icon { width:48px; height:48px; flex-shrink:0; background:var(--primary); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:20px; color:#fff; }
+.why-body h4 { font-size:16px; font-weight:700; color:var(--primary); margin-bottom:4px; }
+.why-body p { font-size:14px; color:var(--text-light); line-height:1.6; }
+
+/* MAP */
+.map-section { background:#fff; padding:80px 0; }
+.map-header { text-align:center; margin-bottom:40px; }
+.map-header .section-divider { margin:0 auto 20px; }
+.map-inner { display:grid; grid-template-columns:340px 1fr; border-radius:8px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,.12); }
+.map-info { background:var(--dark); color:#fff; padding:46px 36px; }
+.map-info h3 { font-family:'Playfair Display',serif; font-size:24px; color:var(--accent-light); margin-bottom:6px; }
+.map-info .tagline { font-size:13px; color:rgba(255,255,255,.55); margin-bottom:28px; line-height:1.5; }
+.map-ci { display:flex; gap:14px; align-items:flex-start; margin-bottom:22px; }
+.map-ci-icon { width:40px; height:40px; flex-shrink:0; background:var(--accent); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+.map-ci-text .lbl { font-size:11px; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,.45); margin-bottom:4px; }
+.map-ci-text a, .map-ci-text span { color:rgba(255,255,255,.85); text-decoration:none; font-size:14px; display:block; line-height:1.6; }
+.map-ci-text a:hover { color:var(--accent-light); }
+.map-dir { display:inline-flex; align-items:center; gap:8px; margin-top:20px; background:var(--accent); color:#fff; padding:12px 22px; border-radius:4px; text-decoration:none; font-weight:700; font-size:14px; transition:background .2s; }
+.map-dir:hover { background:var(--accent-light); }
+.map-embed iframe { width:100%; height:100%; min-height:400px; border:none; display:block; }
+
+/* BLOG */
+.blog { background:var(--light); }
+.blog-header { text-align:center; margin-bottom:48px; }
+.blog-header .section-divider { margin:0 auto 20px; }
+.blog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:28px; }
+.blog-card { background:#fff; border-radius:6px; overflow:hidden; transition:all .3s; text-decoration:none; display:block; }
+.blog-card:hover { box-shadow:0 8px 30px rgba(0,0,0,.1); transform:translateY(-4px); }
+.blog-card-img { height:180px; overflow:hidden; }
+.blog-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+.blog-card:hover .blog-card-img img { transform:scale(1.06); }
+.blog-card-body { padding:20px; }
+.blog-meta { display:flex; gap:10px; align-items:center; margin-bottom:10px; flex-wrap:wrap; }
+.blog-date { font-size:12px; color:var(--accent); font-weight:700; }
+.blog-cat { font-size:12px; color:var(--text-light); background:var(--light); padding:2px 8px; border-radius:10px; border:1px solid #e0e4ea; }
+.blog-card-body h3 { font-family:'Playfair Display',serif; font-size:17px; color:var(--primary); line-height:1.4; margin-bottom:10px; }
+.blog-read { display:inline-flex; align-items:center; gap:6px; color:var(--accent); font-size:13px; font-weight:700; margin-top:6px; transition:gap .2s; }
+.blog-read::after { content:"→"; }
+.blog-read:hover { gap:10px; }
+.blog-view-all { text-align:center; margin-top:36px; }
+.btn-outline-dark { display:inline-flex; align-items:center; gap:8px; border:2px solid var(--primary); color:var(--primary); padding:13px 32px; border-radius:4px; font-weight:700; font-size:14px; text-decoration:none; transition:all .2s; }
+.btn-outline-dark:hover { background:var(--primary); color:#fff; }
+
+/* WHATSAPP FLOAT */
+.wa-float { position:fixed; bottom:28px; right:28px; z-index:9999; display:flex; flex-direction:column; align-items:flex-end; gap:12px; }
+.wa-bubble { background:#25D366; color:#fff; width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(37,211,102,.45); cursor:pointer; text-decoration:none; transition:all .3s; position:relative; }
+.wa-bubble:hover { transform:scale(1.12); box-shadow:0 10px 32px rgba(37,211,102,.55); }
+.wa-bubble svg { width:32px; height:32px; fill:#fff; }
+.wa-bubble .wa-pulse { position:absolute; inset:-4px; border-radius:50%; border:3px solid rgba(37,211,102,.45); animation:waPulse 2s infinite; }
+@keyframes waPulse { 0%{transform:scale(1);opacity:1} 100%{transform:scale(1.5);opacity:0} }
+.wa-tooltip { background:var(--dark); color:#fff; font-size:13px; font-weight:600; padding:8px 16px; border-radius:6px; white-space:nowrap; box-shadow:0 4px 16px rgba(0,0,0,.2); position:relative; }
+.wa-tooltip::after { content:''; position:absolute; right:14px; bottom:-6px; width:12px; height:12px; background:var(--dark); transform:rotate(45deg); border-radius:2px; }
+.wa-panel { background:#fff; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,.18); width:300px; overflow:hidden; display:none; margin-bottom:8px; animation:waPop .3s ease; }
+@keyframes waPop { from{opacity:0;transform:scale(.9) translateY(10px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.wa-panel.open { display:block; }
+.wa-panel-head { background:linear-gradient(135deg,#075E54,#128C7E); padding:20px; color:#fff; display:flex; align-items:center; gap:14px; }
+.wa-panel-head .wa-avatar { width:46px; height:46px; background:rgba(255,255,255,.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:700; flex-shrink:0; }
+.wa-panel-head .wa-name { font-weight:700; font-size:15px; margin-bottom:2px; }
+.wa-panel-head .wa-status { font-size:12px; opacity:.85; display:flex; align-items:center; gap:5px; }
+.wa-status-dot { width:8px; height:8px; background:#4ade80; border-radius:50%; display:inline-block; }
+.wa-panel-body { padding:20px; background:#ECE5DD; }
+.wa-msg { background:#fff; border-radius:8px 8px 8px 0; padding:12px 14px; font-size:14px; color:#333; line-height:1.6; box-shadow:0 1px 4px rgba(0,0,0,.1); margin-bottom:12px; position:relative; }
+.wa-msg::before { content:''; position:absolute; bottom:-6px; left:-6px; width:14px; height:14px; background:#fff; clip-path:polygon(100% 0, 100% 100%, 0 100%); }
+.wa-msg-time { font-size:11px; color:#999; text-align:right; margin-top:4px; }
+.wa-panel-footer { padding:16px; background:#f0f0f0; display:flex; gap:10px; align-items:center; }
+.wa-panel-footer a { flex:1; background:#25D366; color:#fff; border:none; padding:12px 16px; border-radius:8px; font-size:14px; font-weight:700; cursor:pointer; text-align:center; text-decoration:none; transition:background .2s; display:block; }
+.wa-panel-footer a:hover { background:#1da851; }
+.wa-close-btn { position:absolute; top:12px; right:12px; background:rgba(255,255,255,.2); border:none; width:28px; height:28px; border-radius:50%; color:#fff; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; }
+
+/* TESTIMONIALS */
+.testimonials { background:#fff; padding:80px 0; }
+.testimonials-header { text-align:center; margin-bottom:48px; }
+.testimonials-header .section-divider { margin:0 auto 20px; }
+.testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px; }
+.testi-card { background:var(--light); border-radius:8px; padding:32px; position:relative; border-left:4px solid var(--accent); transition:all .3s; }
+.testi-card:hover { box-shadow:0 8px 30px rgba(0,0,0,.1); transform:translateY(-4px); }
+.testi-quote { font-size:50px; color:var(--accent); line-height:1; font-family:'Playfair Display',serif; position:absolute; top:14px; left:20px; opacity:.25; }
+.testi-text { color:var(--text-light); font-size:15px; line-height:1.8; margin-bottom:20px; padding-top:18px; font-style:italic; }
+.testi-author { display:flex; align-items:center; gap:12px; }
+.testi-avatar { width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--dark)); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:16px; flex-shrink:0; }
+.testi-info .tname { font-weight:700; color:var(--primary); font-size:15px; }
+.testi-info .tdetail { font-size:12px; color:var(--accent); font-weight:600; }
+.testi-stars { color:var(--accent-light); font-size:14px; margin-bottom:12px; letter-spacing:2px; }
+
+/* FOOTER */
+.contact-footer { background:var(--dark); color:#fff; padding:70px 0 0; }
+.contact-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:50px; padding-bottom:50px; }
+.footer-contact h3 { font-family:'Playfair Display',serif; font-size:22px; color:var(--accent-light); margin-bottom:20px; }
+.footer-contact p { color:rgba(255,255,255,.7); line-height:1.7; margin-bottom:20px; font-size:15px; }
+.fci { display:flex; gap:12px; align-items:flex-start; margin-bottom:16px; }
+.fci-icon { width:36px; height:36px; flex-shrink:0; background:var(--accent); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:14px; }
+.fci-text a { color:rgba(255,255,255,.85); text-decoration:none; font-size:14px; }
+.fci-text a:hover { color:var(--accent-light); }
+.fci-text span { display:block; font-size:11px; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:1px; margin-bottom:2px; }
+.qform h4 { font-size:12px; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:2px; margin-bottom:14px; margin-top:24px; }
+.qform input,.qform select,.qform textarea { width:100%; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:#fff; padding:11px 13px; border-radius:4px; font-family:inherit; font-size:14px; margin-bottom:9px; outline:none; transition:border-color .2s; }
+.qform input:focus,.qform select:focus,.qform textarea:focus { border-color:var(--accent); }
+.qform select option { background:var(--dark); }
+.qform textarea { resize:vertical; min-height:75px; }
+.qform button { background:var(--accent); color:#fff; border:none; padding:12px; border-radius:4px; font-weight:700; font-size:14px; cursor:pointer; width:100%; transition:background .2s; }
+.qform button:hover { background:var(--accent-light); }
+.footer-links h4 { font-family:'Playfair Display',serif; font-size:18px; color:var(--accent-light); margin-bottom:20px; }
+.footer-links ul { list-style:none; }
+.footer-links ul li { margin-bottom:10px; }
+.footer-links ul li a { color:rgba(255,255,255,.7); text-decoration:none; font-size:14px; transition:color .2s; display:flex; align-items:center; gap:6px; }
+.footer-links ul li a::before { content:"›"; color:var(--accent); }
+.footer-links ul li a:hover { color:var(--accent-light); }
+.footer-social { display:flex; gap:10px; margin-top:24px; }
+.social-btn { width:38px; height:38px; border-radius:6px; background:rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.7); text-decoration:none; font-size:16px; border:1px solid rgba(255,255,255,.12); transition:all .2s; }
+.social-btn:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+.footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding:20px; text-align:center; font-size:13px; color:rgba(255,255,255,.5); }
+
+/* MODALS */
+.modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:2000; align-items:center; justify-content:center; padding:20px; }
+.modal.open { display:flex; }
+.modal-box { background:#fff; border-radius:8px; max-width:580px; width:100%; max-height:85vh; overflow-y:auto; position:relative; padding:40px; }
+.modal-close { position:absolute; top:16px; right:16px; background:var(--light); border:none; width:34px; height:34px; border-radius:50%; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--text); transition:background .2s; }
+.modal-close:hover { background:var(--accent); color:#fff; }
+.modal-box h2 { font-family:'Playfair Display',serif; color:var(--primary); font-size:24px; margin-bottom:6px; }
+.modal-box .modal-role { color:var(--accent); font-weight:600; margin-bottom:20px; font-size:14px; }
+.modal-box p { color:var(--text-light); line-height:1.8; margin-bottom:14px; font-size:15px; }
+.modal-box h4 { color:var(--primary); font-size:16px; margin:20px 0 10px; }
+.modal-box ul { padding-left:20px; color:var(--text-light); font-size:14px; line-height:2; }
+
+/* REVEAL */
+.reveal { opacity:0; transform:translateY(30px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* RESPONSIVE */
+@media(max-width:960px) { .services-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:900px) { .about-grid,.why-grid { grid-template-columns:1fr; } .map-inner { grid-template-columns:1fr; } .contact-footer-grid { grid-template-columns:1fr; } .about-img-wrap img { height:300px; } .about-badge { right:10px; } .services-grid { grid-template-columns:1fr; } }
+@media(max-width:700px) { .stats-grid { grid-template-columns:repeat(2,1fr); gap:30px; } .nav-menu { display:none; } .slide-content { padding:30px 20px; } .wa-panel { width:260px; } }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="contact-items">
+      <div class="contact-item"><span class="icon">✉</span><a href="mailto:info@iterinimmigration.co.ke">info@iterinimmigration.co.ke</a></div>
+      <div class="contact-item"><span class="icon">📞</span><a href="tel:+254115250930">+254 115 250 930</a></div>
+      <div class="contact-item"><span class="icon">📍</span><span>Kaunda Street, Standard Building, 5th Floor</span></div>
+    </div>
+    <div class="cta-links">
+      <a href="#team">Our Team</a>
+      <a href="https://wa.me/254115250930" class="cta-btn">WhatsApp</a>
+      <a href="#contact" class="cta-btn">Free Consultation</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">II</div>
+      <div class="logo-text">
+        <div class="brand">Iterin Immigration</div>
+        <div class="sub">Kenya's Trusted Consultants</div>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li>
+        <a href="#services">Services ▾</a>
+        <ul class="dropdown">
+          <li><a href="services/entry-work-permits.html">Entry Work Permits</a></li>
+          <li class="sub-dd">
+            <a href="services/passes.html">Passes</a>
+            <ul class="dropdown">
+              <li><a href="services/special-pass.html">Special Pass Application</a></li>
+              <li><a href="services/students-pass.html">Students Pass</a></li>
+              <li><a href="services/dependant-pass.html">Dependant Pass Application</a></li>
+              <li><a href="services/kenya-visitors-pass.html">Kenya Visitors Pass</a></li>
+              <li><a href="services/reentry-pass.html">Re-entry Pass Application</a></li>
+              <li><a href="services/visitors-pass-extension.html">Visitors Pass Extension</a></li>
+            </ul>
+          </li>
+          <li><a href="services/citizenship.html">Citizenship</a></li>
+          <li><a href="services/permanent-residency.html">Permanent Residency Status</a></li>
+          <li><a href="services/alien-registration.html">Alien Card / Foreign National Certificate</a></li>
+          <li><a href="services/relocation-settlement.html">Relocation &amp; General Settlement</a></li>
+          <li><a href="services/regularization.html">Regularization</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#services">Govt. Services ▾</a>
+        <ul class="dropdown">
+          <li><a href="services/business-registration.html">Business Registration</a></li>
+          <li><a href="services/kenya-revenue-authority.html">Kenya Revenue Authority</a></li>
+          <li><a href="services/ntsa.html">National Transport &amp; Safety Authority</a></li>
+          <li><a href="services/marriage-in-kenya.html">Marriage in Kenya</a></li>
+        </ul>
+      </li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="slides">
+    <div class="slide active">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80')"></div>
+      <div class="slide-content">
+        <span class="badge">Welcome to Iterin Immigration</span>
+        <h1>Your Trusted Partner in <span>Kenyan Immigration</span></h1>
+        <p>We streamline the process of moving to Kenya with expert, personalized services backed by deep local knowledge and a reliable partner network.</p>
+        <div class="slide-btns">
+          <a href="#contact" class="btn-primary">Free Consultation</a>
+          <a href="#services" class="btn-outline">Our Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80')"></div>
+      <div class="slide-content">
+        <span class="badge">Expert Immigration Support</span>
+        <h1>Visas, Work Permits &amp; <span>Settlement Solutions</span></h1>
+        <p>From Class G work permits to permanent residency — our certified team handles every step with integrity, speed, and full compliance with Kenya's Immigration Act.</p>
+        <div class="slide-btns">
+          <a href="#services" class="btn-primary">View Services</a>
+          <a href="https://wa.me/254115250930" class="btn-outline">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1529693662653-9d480530a697?w=1600&q=80')"></div>
+      <div class="slide-content">
+        <span class="badge">Relocation Specialists</span>
+        <h1>Making Kenya <span>Your New Home</span></h1>
+        <p>Comprehensive relocation and integration services for expatriates, international families and organizations — all through a single, trusted platform.</p>
+        <div class="slide-btns">
+          <a href="#about" class="btn-primary">Learn More</a>
+          <a href="#contact" class="btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slider-controls">
+    <div class="dot active" onclick="goTo(0)"></div>
+    <div class="dot" onclick="goTo(1)"></div>
+    <div class="dot" onclick="goTo(2)"></div>
+  </div>
+  <div class="slider-arrows">
+    <div class="arrow" onclick="changeSlide(-1)">&#8592;</div>
+    <div class="arrow" onclick="changeSlide(1)">&#8594;</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80" alt="Iterin Immigration Office">
+        <div class="about-badge">
+          <div class="years">5+</div>
+          <div class="label">Years of Excellence</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag">About Us</p>
+        <h2 class="section-title">The Leading <span>Immigration Consultancy</span> in Kenya</h2>
+        <div class="section-divider"></div>
+        <p>Iterin Immigration is a specialized consultancy firm authorized by the Government of Kenya to offer professional immigration services based on the Kenya Immigration Act and Nationality and Citizenship Laws. We have successfully advised and guided international organizations, businesses, and individuals on Kenya's immigration requirements for over five years.</p>
+        <p>We specialize in delivering seamless, fully compliant immigration solutions — from work permits and passes to citizenship and permanent residency. Our experienced team combines deep regulatory knowledge with genuine care for every client's journey to Kenya.</p>
+        <p>Whether you're moving to Kenya for work, study, business, or family, our team will handle every step of your immigration journey, making the process simple and stress-free.</p>
+        <div class="about-founder">
+          <div class="founder-avatar">M</div>
+          <div class="founder-info">
+            <div class="name">Millicent Wanja</div>
+            <div class="role">Founder &amp; CEO, Iterin Immigration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <p class="section-tag">Services</p>
+      <h2 class="section-title">Areas of <span>Expert Practice</span></h2>
+      <div class="section-divider"></div>
+      <p>Expert visa, residency &amp; citizenship support — tailored to your specific needs, every step of the way.</p>
+    </div>
+    <div class="services-grid reveal">
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80" alt="Entry Work Permits"></div>
+        <div class="service-card-body">
+          <h3>Entry Work Permits</h3>
+          <p>Issued under Section 40 of the Kenya Citizenship and Immigration Act, 2011. We handle all permit classes enabling foreign nationals to enter Kenya for trade, employment, farming, business, missionary activities or retirement.</p>
+          <div class="service-tags"><span>Class A</span><span>Class B</span><span>Class C</span><span>Class D</span><span>Class F</span><span>Class G</span><span>Class I</span><span>Class K</span><span>Class N</span><span>Class R</span></div>
+          <a href="services/entry-work-permits.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Special Pass"></div>
+        <div class="service-card-body">
+          <h3>Special Pass Application</h3>
+          <p>For foreign nationals seeking to reside in Kenya for special circumstances including humanitarian reasons, marriage to a Kenyan citizen, or other unique situations requiring temporary legal stay.</p>
+          <a href="services/special-pass.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Students Pass"></div>
+        <div class="service-card-body">
+          <h3>Students Pass</h3>
+          <p>For international students enrolled in accredited Kenyan institutions. We guide you through the entire process including documentation, submission, and compliance with student visa requirements.</p>
+          <a href="services/students-pass.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80" alt="Dependant Pass"></div>
+        <div class="service-card-body">
+          <h3>Dependant Pass Application</h3>
+          <p>For spouses and children of work permit or pass holders. We facilitate family reunification by managing dependant pass applications with full documentary compliance.</p>
+          <a href="services/dependant-pass.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80" alt="Kenya Visitors Pass"></div>
+        <div class="service-card-body">
+          <h3>Kenya Visitors Pass</h3>
+          <p>For tourists, business visitors, or those visiting family in Kenya. We ensure accurate applications that meet all Immigration Department requirements for smooth entry and stay.</p>
+          <a href="services/kenya-visitors-pass.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=80" alt="Re-entry Pass"></div>
+        <div class="service-card-body">
+          <h3>Re-entry Pass Application</h3>
+          <p>For permit holders who need to travel outside Kenya and return. We facilitate re-entry pass applications to ensure seamless travel without jeopardizing your immigration status.</p>
+          <a href="services/reentry-pass.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Visitors Pass Extension"></div>
+        <div class="service-card-body">
+          <h3>Visitors Pass Extension</h3>
+          <p>Need to stay longer in Kenya? We handle visitor pass extensions ensuring your extended stay is fully legal and compliant with immigration regulations.</p>
+          <a href="services/visitors-pass-extension.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1529693662653-9d480530a697?w=600&q=80" alt="Citizenship"></div>
+        <div class="service-card-body">
+          <h3>Citizenship</h3>
+          <p>Expert guidance through Kenya's citizenship application process. We assess your eligibility, prepare all required documentation, and manage the full submission to the Directorate of Immigration Services.</p>
+          <a href="services/citizenship.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Permanent Residency"></div>
+        <div class="service-card-body">
+          <h3>Permanent Residency Status</h3>
+          <p>A status granted under the Kenya Citizenship and Immigration Act. We guide you through eligibility requirements, Class M permit applications, and Certificate of Permanent Residence proceedings.</p>
+          <a href="services/permanent-residency.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Alien Card"></div>
+        <div class="service-card-body">
+          <h3>Alien Card / Foreign National Certificate</h3>
+          <p>Foreign nationals residing in Kenya must hold a valid Alien Registration Certificate (ARC). We manage the full registration process, renewals, and any amendments to your alien registration status.</p>
+          <a href="services/alien-registration.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Relocation"></div>
+        <div class="service-card-body">
+          <h3>Relocation &amp; General Settlement</h3>
+          <p>We've helped tens of families and organizations relocate to Kenya. Our service covers housing advisory, school search, banking setup, community integration, and all practical aspects of settling in Kenya.</p>
+          <a href="services/relocation-settlement.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="Regularization"></div>
+        <div class="service-card-body">
+          <h3>Regularization</h3>
+          <p>If you are currently in Kenya without proper documentation or with an expired permit, our regularization service helps bring your immigration status into full legal compliance — discreetly and efficiently.</p>
+          <a href="services/regularization.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Business Registration"></div>
+        <div class="service-card-body">
+          <h3>Business Registration</h3>
+          <p>Complete business registration services including company incorporation, business name registration, and all required licensing to get your business operational in Kenya.</p>
+          <a href="services/business-registration.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="KRA Services"></div>
+        <div class="service-card-body">
+          <h3>Kenya Revenue Authority</h3>
+          <p>KRA PIN registration, tax compliance advisory, VAT registration, and all tax-related services to ensure your business and personal tax obligations are properly managed.</p>
+          <a href="services/kenya-revenue-authority.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80" alt="NTSA Services"></div>
+        <div class="service-card-body">
+          <h3>National Transport &amp; Safety Authority</h3>
+          <p>Vehicle registration, driving license applications, foreign licence conversion, and all NTSA-related services to keep you mobile and compliant on Kenyan roads.</p>
+          <a href="services/ntsa.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Marriage in Kenya"></div>
+        <div class="service-card-body">
+          <h3>Marriage in Kenya</h3>
+          <p>Complete marriage documentation services including marriage certificate applications, affidavit processing, and all required documentation for legal marriages in Kenya — for both citizens and foreign nationals.</p>
+          <a href="services/marriage-in-kenya.html" class="service-link">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="team-header reveal">
+      <p class="section-tag">The Team</p>
+      <h2 class="section-title">A <span>Dedicated</span> Immigration &amp; Consulting Team</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card" onclick="openModal('m1')">
+        <div class="team-photo"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80" alt="Millicent Wanja"><div class="photo-overlay"><span>View Profile</span></div></div>
+        <h3>Millicent Wanja</h3><div class="role">Founder &amp; CEO</div>
+      </div>
+      <div class="team-card" onclick="openModal('m2')">
+        <div class="team-photo"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="David Kamau"><div class="photo-overlay"><span>View Profile</span></div></div>
+        <h3>David Kamau</h3><div class="role">Senior Immigration Consultant</div>
+      </div>
+      <div class="team-card" onclick="openModal('m3')">
+        <div class="team-photo"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Grace Njoroge"><div class="photo-overlay"><span>View Profile</span></div></div>
+        <h3>Grace Njoroge</h3><div class="role">Compliance &amp; Regulatory Officer</div>
+      </div>
+      <div class="team-card" onclick="openModal('m4')">
+        <div class="team-photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Peter Otieno"><div class="photo-overlay"><span>View Profile</span></div></div>
+        <h3>Peter Otieno</h3><div class="role">Relocation Specialist</div>
+      </div>
+      <div class="team-card" onclick="openModal('m5')">
+        <div class="team-photo"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Amina Hassan"><div class="photo-overlay"><span>View Profile</span></div></div>
+        <h3>Amina Hassan</h3><div class="role">Client Relations Manager</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-number" data-target="1500">0</div><div class="stat-label">Happy Clients</div></div>
+      <div class="stat-item reveal"><div class="stat-number" data-target="5">0</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-item reveal"><div class="stat-number" data-target="99">0</div><div class="stat-label">% Success Rate</div></div>
+      <div class="stat-item reveal"><div class="stat-number" data-target="3000">0</div><div class="stat-label">Cases Handled</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY CTA -->
+<div class="emergency-cta">
+  <div class="inner">
+    <div>
+      <div class="phone-label">📞 24/7 Immigration Helpline</div>
+      <div class="e-phone">Call: +254 115 250 930</div>
+    </div>
+    <p>We Are Here To Offer You a Dependable Immigration Partner. Since ignorance of immigration law is no excuse, leverage our expertise today.</p>
+    <a href="#contact" class="btn-white">Free Consultation</a>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+  <div class="container">
+    <div class="why-grid reveal">
+      <div class="why-img">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80" alt="Iterin Team at Work">
+      </div>
+      <div>
+        <p class="section-tag">Why Choose Iterin</p>
+        <h2 class="section-title">The <span>Smart Choice</span> for Your Kenya Immigration Journey</h2>
+        <div class="section-divider"></div>
+        <div class="why-features">
+          <div class="why-feature"><div class="why-icon">💰</div><div class="why-body"><h4>Affordable &amp; Flexible</h4><p>Cost-effective, reliable service standing with you from start to finish. Transparent pricing with no hidden charges.</p></div></div>
+          <div class="why-feature"><div class="why-icon">🎓</div><div class="why-body"><h4>Deep Regulatory Knowledge</h4><p>100% compliant with Kenya's Immigration Act &amp; the Directorate of Immigration Services. We stay current on all policy changes.</p></div></div>
+          <div class="why-feature"><div class="why-icon">⚡</div><div class="why-body"><h4>Fast &amp; Reliable Processing</h4><p>Having handled thousands of cases, we know the process inside out — ensuring speedy, quality service with a 99% client retention rate.</p></div></div>
+          <div class="why-feature"><div class="why-icon">🌐</div><div class="why-body"><h4>24/7 Customer Support</h4><p>Round-the-clock service desk attending to all your immigration needs, with multilingual support in English, Swahili and more.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <p class="section-tag">Client Stories</p>
+      <h2 class="section-title">What Our <span>Clients Say</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Iterin handled our entire family's relocation to Nairobi, including work permits for myself and a students pass for our daughter. The process was smooth, fast, and stress-free. We couldn't be happier.</p>
+        <div class="testi-author"><div class="testi-avatar">J</div><div class="testi-info"><div class="tname">James Okafor</div><div class="tdetail">Class D Work Permit, Lagos → Nairobi</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">After years on work permits, Iterin guided me through my permanent residency application. Their knowledge of Category B requirements was exceptional. My PR was approved in under 4 months.</p>
+        <div class="testi-author"><div class="testi-avatar">S</div><div class="testi-info"><div class="tname">Sophia Martins</div><div class="tdetail">Permanent Residency, Category B</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I had an overstay issue and was very anxious. Iterin handled my regularization quietly and professionally. Within 6 weeks I had a clean status. I recommend them to anyone with complex immigration situations.</p>
+        <div class="testi-author"><div class="testi-avatar">A</div><div class="testi-info"><div class="tname">Ahmed Al-Rashid</div><div class="tdetail">Regularization Service</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section" id="location">
+  <div class="container">
+    <div class="map-header reveal">
+      <p class="section-tag">Find Us</p>
+      <h2 class="section-title">Visit Our <span>Nairobi Office</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="map-inner reveal">
+      <div class="map-info">
+        <h3>Iterin Immigration</h3>
+        <div class="tagline">Standard Building, 5th Floor<br>Kaunda Street, Nairobi CBD, Kenya</div>
+        <div class="map-ci"><div class="map-ci-icon">📍</div><div class="map-ci-text"><div class="lbl">Office Address</div><span>Standard Building, 5th Floor<br>Kaunda Street, Nairobi CBD</span></div></div>
+        <div class="map-ci"><div class="map-ci-icon">📞</div><div class="map-ci-text"><div class="lbl">Phone</div><a href="tel:+254115250930">+254 115 250 930</a></div></div>
+        <div class="map-ci"><div class="map-ci-icon">✉</div><div class="map-ci-text"><div class="lbl">Email</div><a href="mailto:info@iterinimmigration.co.ke">info@iterinimmigration.co.ke</a></div></div>
+        <div class="map-ci"><div class="map-ci-icon">🕐</div><div class="map-ci-text"><div class="lbl">Office Hours</div><span>Mon – Fri: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 1:00 PM</span></div></div>
+        <a href="https://maps.google.com/?q=Standard+Building+Kaunda+Street+Nairobi+Kenya" target="_blank" class="map-dir">📌 Get Directions</a>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8173271!2d36.8195269!3d-1.2851294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6c8e9e4e9%3A0x40f6ec00008b7919!2sStandard%20Building%2C%20Standard%20St%2C%20Nairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG — updated with blog/ folder links & 2026 dates -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div class="blog-header reveal">
+      <p class="section-tag">Knowledge Corner</p>
+      <h2 class="section-title">Latest <span>Immigration Insights</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="blog-grid reveal">
+      <a href="blog/work-permit-guide.html" class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80" alt="Work Permit"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-date">March 4, 2026</span><span class="blog-cat">Work Permit</span></div>
+          <h3>How to Apply for a Kenyan Work Permit: Step-by-Step Guide 2026</h3>
+          <span class="blog-read">Read More</span>
+        </div>
+      </a>
+      <a href="blog/settling-in-nairobi.html" class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1470290378698-263fa7ca60ab?w=600&q=80" alt="Nairobi"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-date">March 4, 2026</span><span class="blog-cat">Settling in Nairobi</span></div>
+          <h3>Settling in Nairobi: What Expats Need to Know Before Relocating (2026)</h3>
+          <span class="blog-read">Read More</span>
+        </div>
+      </a>
+      <a href="blog/family-reunification.html" class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1529693662653-9d480530a697?w=600&q=80" alt="Family"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-date">March 4, 2026</span><span class="blog-cat">Family Reunification</span></div>
+          <h3>Family Reunification in Kenya: How to Bring Your Spouse and Children (2026)</h3>
+          <span class="blog-read">Read More</span>
+        </div>
+      </a>
+      <a href="blog/permanent-residency-guide.html" class="blog-card">
+        <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Residency"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-date">March 4, 2026</span><span class="blog-cat">Permanent Residency</span></div>
+          <h3>Permanent Residency in Kenya: Eligibility and Application Process (2026)</h3>
+          <span class="blog-read">Read More</span>
+        </div>
+      </a>
+    </div>
+    <div class="blog-view-all reveal">
+      <a href="blog/index.html" class="btn-outline-dark">View All Articles &nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="contact-footer" id="contact">
+  <div class="container">
+    <div class="contact-footer-grid reveal">
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Located at Standard Building, 5th Floor, Kaunda Street, Nairobi CBD. Reach us for consultations, permit applications or any immigration queries.</p>
+        <div class="fci"><div class="fci-icon">📍</div><div class="fci-text"><span>Address</span><a href="#">Standard Building, 5th Floor, Kaunda Street, Nairobi</a></div></div>
+        <div class="fci"><div class="fci-icon">📞</div><div class="fci-text"><span>Phone</span><a href="tel:+254115250930">+254 115 250 930</a></div></div>
+        <div class="fci"><div class="fci-icon">✉</div><div class="fci-text"><span>Email</span><a href="mailto:info@iterinimmigration.co.ke">info@iterinimmigration.co.ke</a></div></div>
+        <div class="fci"><div class="fci-icon" style="background:#25D366;">💬</div><div class="fci-text"><span>WhatsApp</span><a href="https://wa.me/254115250930" target="_blank">Chat with us on WhatsApp</a></div></div>
+        <div class="qform">
+          <h4>Quick Message</h4>
+          <input type="text" placeholder="Your Name">
+          <input type="email" placeholder="Your Email">
+          <select>
+            <option value="">Enquiry Type</option>
+            <option>Work Permit</option>
+            <option>Special / Student / Dependent Pass</option>
+            <option>Kenya Visitors Pass</option>
+            <option>Citizenship</option>
+            <option>Permanent Residency</option>
+            <option>Alien Card Registration</option>
+            <option>Relocation &amp; Settlement</option>
+            <option>Regularization</option>
+            <option>Government Services</option>
+            <option>General Enquiry</option>
+          </select>
+          <textarea placeholder="Your Message"></textarea>
+          <button type="button" id="sendBtn">Send Message</button>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#location">Find Us</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="#" class="social-btn" title="Facebook">f</a>
+          <a href="#" class="social-btn" title="Twitter / X">𝕏</a>
+          <a href="https://wa.me/254115250930" class="social-btn" title="WhatsApp" style="background:#25D366;color:#fff;border-color:#25D366;">💬</a>
+          <a href="mailto:info@iterinimmigration.co.ke" class="social-btn" title="Email">✉</a>
+          <a href="#" class="social-btn" title="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services/entry-work-permits.html">Entry Work Permits</a></li>
+          <li><a href="services/special-pass.html">Special Pass</a></li>
+          <li><a href="services/students-pass.html">Students Pass</a></li>
+          <li><a href="services/dependant-pass.html">Dependant Pass</a></li>
+          <li><a href="services/kenya-visitors-pass.html">Kenya Visitors Pass</a></li>
+          <li><a href="services/citizenship.html">Citizenship</a></li>
+          <li><a href="services/permanent-residency.html">Permanent Residency</a></li>
+          <li><a href="services/alien-registration.html">Alien Card (ARC)</a></li>
+          <li><a href="services/business-registration.html">Business Registration</a></li>
+          <li><a href="services/marriage-in-kenya.html">Marriage in Kenya</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Copyright &copy; 2026 Iterin Immigration. All Rights Reserved. | Standard Building, 5th Floor, Kaunda Street, Nairobi
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING WIDGET -->
+<div class="wa-float" id="waFloat">
+  <div class="wa-panel" id="waPanel">
+    <div class="wa-panel-head" style="position:relative;">
+      <div class="wa-avatar">II</div>
+      <div>
+        <div class="wa-name">Iterin Immigration</div>
+        <div class="wa-status"><span class="wa-status-dot"></span> Typically replies within minutes</div>
+      </div>
+      <button class="wa-close-btn" onclick="toggleWA()" title="Close">✕</button>
+    </div>
+    <div class="wa-panel-body">
+      <div class="wa-msg">
+        Hello! 👋 Welcome to <strong>Iterin Immigration</strong>.<br><br>
+        How can we help you today? We're available for:<br>
+        • Work Permit enquiries<br>
+        • Visa &amp; Pass applications<br>
+        • Relocation support<br>
+        • Any immigration question
+        <div class="wa-msg-time">Just now</div>
+      </div>
+    </div>
+    <div class="wa-panel-footer">
+      <a href="https://wa.me/254115250930?text=Hello%20Iterin%20Immigration%2C%20I%20would%20like%20to%20enquire%20about%20your%20immigration%20services." target="_blank">Start Chat on WhatsApp</a>
+    </div>
+  </div>
+  <div class="wa-tooltip" id="waTooltip">Chat with us on WhatsApp</div>
+  <a href="#" class="wa-bubble" onclick="toggleWA(); return false;" title="Chat on WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- MODALS -->
+<div class="modal" id="m1"><div class="modal-box">
+  <button class="modal-close" onclick="closeModal('m1')">✕</button>
+  <h2>Millicent Wanja</h2><div class="modal-role">Founder &amp; CEO</div>
+  <p>Millicent Wanja is the Founder and CEO of Iterin Immigration. With over five years of dedicated experience in Kenya's immigration sector, she has built Iterin into one of Nairobi's most trusted immigration consultancies.</p>
+  <p>Her deep understanding of Kenya's Immigration Act, Nationality and Citizenship Laws, and the Directorate of Immigration Services procedures enables her to provide strategic, compliant, and timely solutions for individuals and organizations relocating to Kenya.</p>
+  <h4>Areas of Expertise</h4>
+  <ul><li>Work Permit Applications (All Classes)</li><li>Permanent Residency &amp; Citizenship</li><li>Corporate Immigration Strategy</li><li>Government Liaison &amp; Regulatory Compliance</li><li>Relocation &amp; Integration Support</li></ul>
+</div></div>
+<div class="modal" id="m2"><div class="modal-box">
+  <button class="modal-close" onclick="closeModal('m2')">✕</button>
+  <h2>David Kamau</h2><div class="modal-role">Senior Immigration Consultant</div>
+  <p>David is a Senior Immigration Consultant with extensive experience handling complex immigration cases for multinational corporations, SMEs, and individuals. He specializes in work permit applications, dependant passes, and corporate immigration compliance.</p>
+  <h4>Qualifications</h4>
+  <ul><li>Certified Immigration Consultant</li><li>Specialist in Class G &amp; Class M Permits</li><li>Corporate Immigration Advisory</li></ul>
+</div></div>
+<div class="modal" id="m3"><div class="modal-box">
+  <button class="modal-close" onclick="closeModal('m3')">✕</button>
+  <h2>Grace Njoroge</h2><div class="modal-role">Compliance &amp; Regulatory Officer</div>
+  <p>Grace oversees all compliance and regulatory matters at Iterin. She ensures every client file meets the full requirements of the Kenya Immigration Act, minimizing delays and rejection risks. She monitors regulatory updates from the Directorate of Immigration Services and the Ministry of Interior to keep Iterin's practices fully current.</p>
+</div></div>
+<div class="modal" id="m4"><div class="modal-box">
+  <button class="modal-close" onclick="closeModal('m4')">✕</button>
+  <h2>Peter Otieno</h2><div class="modal-role">Relocation Specialist</div>
+  <p>Peter leads Iterin's relocation and settlement division, helping expatriates and their families make a smooth transition to life in Kenya. He coordinates housing advisory, school search, community integration, and practical settlement logistics across Nairobi and other Kenyan cities.</p>
+</div></div>
+<div class="modal" id="m5"><div class="modal-box">
+  <button class="modal-close" onclick="closeModal('m5')">✕</button>
+  <h2>Amina Hassan</h2><div class="modal-role">Client Relations Manager</div>
+  <p>Amina manages all client relationships at Iterin, ensuring every client receives prompt and empathetic communication throughout their immigration journey. She is multilingual — supporting clients in English, Swahili, and Somali — making Iterin accessible across the region.</p>
+</div></div>
+
+<script>
+// SLIDER
+let cur = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let timer;
+function goTo(n) {
+  slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+  cur = (n + slides.length) % slides.length;
+  slides[cur].classList.add('active'); dots[cur].classList.add('active');
+  resetTimer();
+}
+function changeSlide(d) { goTo(cur + d); }
+function resetTimer() { clearInterval(timer); timer = setInterval(() => changeSlide(1), 5500); }
+resetTimer();
+
+// SCROLL REVEAL
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// STAT COUNTER
+document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+  const so = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      const target = +el.dataset.target; let n = 0, step = target / 60;
+      const iv = setInterval(() => {
+        n = Math.min(n + step, target);
+        el.textContent = Math.floor(n).toLocaleString();
+        if (n >= target) { clearInterval(iv); el.textContent = target.toLocaleString(); }
+      }, 25);
+      so.unobserve(el);
+    }
+  }, { threshold: 0.3 });
+  so.observe(el);
+});
+
+// MODALS
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => { if(e.target===m) closeModal(m.id); }));
+
+// FORM
+document.getElementById('sendBtn').addEventListener('click', function() {
+  this.textContent = "✓ Sent! We'll be in touch shortly.";
+  this.style.background = '#27ae60';
+  setTimeout(() => { this.textContent = 'Send Message'; this.style.background = ''; }, 3500);
+});
+
+// WHATSAPP WIDGET
+let waOpen = false;
+let waTooltipHidden = false;
+function toggleWA() {
+  waOpen = !waOpen;
+  const panel = document.getElementById('waPanel');
+  const tooltip = document.getElementById('waTooltip');
+  if (waOpen) {
+    panel.classList.add('open');
+    tooltip.style.display = 'none';
+    waTooltipHidden = true;
+  } else {
+    panel.classList.remove('open');
+    if (!waTooltipHidden) tooltip.style.display = 'block';
+  }
+}
+// Auto-show tooltip after 3s, hide after 6s
+setTimeout(() => {
+  const t = document.getElementById('waTooltip');
+  if (t && !waTooltipHidden) {
+    t.style.display = 'block';
+    setTimeout(() => { if (!waOpen) t.style.display = 'none'; }, 6000);
+  }
+}, 3000);
+// Initially hide tooltip
+document.getElementById('waTooltip').style.display = 'none';
+</script>
+</body>
+</html>

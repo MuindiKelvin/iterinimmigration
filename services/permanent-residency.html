@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Permanent Residency Status | Iterin Immigration</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8922a;--accent-light:#e8b84b;--light:#f5f7fa;--text:#333;--text-light:#666;--dark:#0d2137;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:#fff;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.top-bar{background:var(--dark);color:rgba(255,255,255,.85);font-size:13px;padding:8px 0;}
+.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.top-bar a{color:rgba(255,255,255,.85);text-decoration:none;}
+.top-bar a:hover{color:var(--accent-light);}
+.top-bar .ti{display:flex;gap:22px;flex-wrap:wrap;}
+.top-bar .ci{display:flex;align-items:center;gap:7px;}
+.top-bar .ci .ic{width:18px;height:18px;background:var(--accent);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9px;}
+.top-bar .cl{display:flex;gap:10px;align-items:center;}
+.top-bar .cb{background:var(--accent);color:#fff!important;padding:4px 14px;border-radius:3px;font-weight:600;font-size:12px;transition:background .2s;}
+.top-bar .cb:hover{background:var(--accent-light);}
+nav{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.1);position:sticky;top:0;z-index:999;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1200px;margin:0 auto;}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--primary),var(--dark));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:700;}
+.logo-text .brand{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--primary);}
+.logo-text .sub{font-size:11px;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;}
+.nav-menu{display:flex;list-style:none;gap:2px;align-items:center;}
+.nav-menu>li{position:relative;}
+.nav-menu>li>a{display:block;padding:10px 13px;color:var(--primary);text-decoration:none;font-weight:600;font-size:14px;border-radius:4px;transition:all .2s;}
+.nav-menu>li>a:hover,.nav-menu>li.active>a{background:var(--light);color:var(--accent);}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:240px;box-shadow:0 8px 30px rgba(0,0,0,.12);border-top:3px solid var(--accent);z-index:1000;list-style:none;}
+.dropdown li a{display:block;padding:10px 18px;font-size:13px;color:var(--primary);text-decoration:none;border-bottom:1px solid #f0f0f0;transition:all .2s;}
+.dropdown li a:hover{background:var(--light);color:var(--accent);padding-left:24px;}
+.nav-menu>li:hover>.dropdown{display:block;}
+.sub-dd>a::after{content:" ›";float:right;}
+.sub-dd>.dropdown{top:0;left:100%;}
+.sub-dd:hover>.dropdown{display:block;}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 20px!important;border-radius:4px;}
+.nav-cta:hover{background:var(--primary)!important;}
+.page-hero{background:linear-gradient(135deg,var(--dark) 0%,var(--primary) 100%);padding:60px 0 50px;position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E") repeat;pointer-events:none;}
+.page-hero .container{position:relative;z-index:1;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:14px;flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent-light);}
+.breadcrumb span{color:var(--accent-light);}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);color:#fff;margin-bottom:12px;}
+.page-hero p{color:rgba(255,255,255,.75);font-size:16px;max-width:600px;line-height:1.7;}
+.page-hero .ph-tag{background:var(--accent);color:#fff;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:12px;display:inline-block;margin-bottom:14px;}
+.service-page{padding:70px 0;background:var(--light);}
+.service-layout{display:grid;grid-template-columns:1fr 300px;gap:36px;align-items:start;}
+.service-main{background:#fff;border-radius:8px;padding:40px;box-shadow:0 3px 16px rgba(0,0,0,.06);}
+.service-main h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--primary);margin-bottom:8px;}
+.service-main .subtitle{color:var(--accent);font-weight:600;font-size:14px;margin-bottom:20px;}
+.service-divider{width:60px;height:3px;background:var(--accent);margin-bottom:24px;}
+.service-main p{color:var(--text-light);line-height:1.85;margin-bottom:16px;font-size:15px;}
+.service-main h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--primary);margin:28px 0 14px;}
+.service-img{width:100%;border-radius:6px;margin-bottom:28px;object-fit:cover;height:280px;display:block;}
+.class-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 24px;}
+.class-list li{background:var(--light);border:1px solid #dde3ea;border-radius:4px;padding:12px 16px;font-size:14px;color:var(--primary);font-weight:600;display:flex;align-items:center;gap:8px;}
+.class-list li::before{content:"✓";color:var(--accent);font-weight:700;}
+.passes-list{margin:20px 0;}
+.pass-card{border:1px solid #e8edf3;border-radius:6px;margin-bottom:16px;overflow:hidden;}
+.pass-card-head{background:var(--primary);color:#fff;padding:14px 20px;font-family:'Playfair Display',serif;font-size:17px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
+.pass-card-head .toggle{font-size:20px;line-height:1;transition:transform .2s;}
+.pass-card-body{padding:18px 20px;display:none;}
+.pass-card-body p{color:var(--text-light);font-size:14px;line-height:1.8;margin:0;}
+.pass-card.open .pass-card-body{display:block;}
+.pass-card.open .pass-card-head{background:var(--accent);}
+.pass-card.open .toggle{transform:rotate(45deg);}
+.service-sidebar{position:sticky;top:80px;}
+.sidebar-box{background:#fff;border-radius:6px;padding:22px;box-shadow:0 3px 16px rgba(0,0,0,.06);margin-bottom:20px;}
+.sidebar-box h4{font-family:'Playfair Display',serif;font-size:16px;color:var(--primary);margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--light);}
+.sb-nav{list-style:none;max-height:400px;overflow-y:auto;}
+.sb-nav li{border-bottom:1px solid #f0f0f0;}
+.sb-nav li a{display:flex;align-items:center;justify-content:space-between;padding:9px 0;color:var(--primary);text-decoration:none;font-size:13px;font-weight:600;transition:color .2s;}
+.sb-nav li a:hover,.sb-nav li.active a{color:var(--accent);}
+.sb-nav li a::after{content:"›";color:var(--accent);font-size:18px;}
+.sidebar-cta{background:linear-gradient(135deg,var(--primary),var(--dark));border-radius:6px;padding:24px;text-align:center;color:#fff;margin-bottom:20px;}
+.sidebar-cta h4{font-family:'Playfair Display',serif;font-size:16px;margin-bottom:10px;color:#fff;padding:0;border:none;}
+.sidebar-cta p{font-size:13px;opacity:.85;margin-bottom:14px;line-height:1.6;color:rgba(255,255,255,.85);}
+.sidebar-cta a{display:block;background:var(--accent);color:#fff;padding:11px;border-radius:4px;font-weight:700;font-size:13px;text-decoration:none;margin-bottom:9px;transition:background .2s;}
+.sidebar-cta a:hover{background:var(--accent-light);}
+.sidebar-cta .sc-phone{font-size:14px;font-weight:700;color:var(--accent-light);margin-top:8px;}
+.btn-consult{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:13px 28px;border-radius:4px;font-weight:700;font-size:14px;text-decoration:none;margin-top:20px;transition:all .2s;}
+.btn-consult:hover{background:var(--primary);transform:translateY(-2px);}
+.site-footer{background:var(--dark);color:#fff;padding:60px 0 0;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px;padding-bottom:50px;}
+.footer-col h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--accent-light);margin-bottom:20px;}
+.footer-col p{color:rgba(255,255,255,.7);font-size:14px;line-height:1.8;margin-bottom:12px;}
+.fci{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;}
+.fci-icon{width:34px;height:34px;flex-shrink:0;background:var(--accent);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.fci-text .lbl{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.fci-text a{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px;}
+.fci-text a:hover{color:var(--accent-light);}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:9px;}
+.footer-col ul li a{color:rgba(255,255,255,.7);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.footer-col ul li a::before{content:"›";color:var(--accent);}
+.footer-col ul li a:hover{color:var(--accent-light);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:18px;text-align:center;font-size:13px;color:rgba(255,255,255,.45);}
+@media(max-width:900px){.service-layout{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+@media(max-width:700px){.nav-menu{display:none;}.class-list{grid-template-columns:1fr;}}
+
+.wa-cta-banner{background:linear-gradient(135deg,#075E54,#128C7E);border-radius:10px;padding:28px 32px;margin-top:32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.wa-icon{width:58px;height:58px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.wa-icon svg{width:32px;height:32px;fill:#fff;}
+.wa-cta-text{flex:1;min-width:180px;}
+.wa-cta-text h3{font-family:'Playfair Display',serif;color:#fff;font-size:18px;margin-bottom:6px;}
+.wa-cta-text p{color:rgba(255,255,255,.85);font-size:13px;line-height:1.6;margin:0;}
+.wa-cta-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.wa-cta-btns a{padding:11px 20px;border-radius:5px;font-weight:700;font-size:13px;text-decoration:none;transition:all .2s;white-space:nowrap;}
+.wa-btn-green{background:#25D366;color:#fff;}
+.wa-btn-green:hover{background:#1da851;}
+.wa-btn-white{background:#fff;color:#075E54;}
+.wa-btn-white:hover{background:#f0fff4;}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+.wa-bubble{background:#25D366;color:#fff;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);cursor:pointer;text-decoration:none;transition:all .3s;position:relative;}
+.wa-bubble:hover{transform:scale(1.12);}
+.wa-bubble svg{width:32px;height:32px;fill:#fff;}
+.wa-pulse{position:absolute;inset:-4px;border-radius:50%;border:3px solid rgba(37,211,102,.45);animation:waPulse 2s infinite;}
+@keyframes waPulse{0%{transform:scale(1);opacity:1}100%{transform:scale(1.5);opacity:0}}
+.wa-panel{background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.18);width:300px;overflow:hidden;display:none;margin-bottom:8px;}
+.wa-panel.open{display:block;animation:waPop .3s ease;}
+@keyframes waPop{from{opacity:0;transform:scale(.9) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.wa-panel-head{background:linear-gradient(135deg,#075E54,#128C7E);padding:18px 20px;color:#fff;display:flex;align-items:center;gap:14px;position:relative;}
+.wa-avatar{width:44px;height:44px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex-shrink:0;}
+.wa-name{font-weight:700;font-size:15px;margin-bottom:2px;}
+.wa-status{font-size:12px;opacity:.85;display:flex;align-items:center;gap:5px;}
+.wa-status-dot{width:8px;height:8px;background:#4ade80;border-radius:50%;display:inline-block;}
+.wa-close-btn{position:absolute;top:10px;right:12px;background:rgba(255,255,255,.2);border:none;width:26px;height:26px;border-radius:50%;color:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.wa-panel-body{padding:18px;background:#ECE5DD;}
+.wa-msg{background:#fff;border-radius:8px 8px 8px 0;padding:12px 14px;font-size:14px;color:#333;line-height:1.6;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+.wa-msg-time{font-size:11px;color:#999;text-align:right;margin-top:4px;}
+.wa-panel-footer{padding:14px 16px;background:#f0f0f0;}
+.wa-panel-footer a{display:block;background:#25D366;color:#fff;padding:12px;border-radius:8px;font-size:14px;font-weight:700;text-align:center;text-decoration:none;transition:background .2s;}
+.wa-panel-footer a:hover{background:#1da851;}
+.reading-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0%;z-index:9998;}
+#backTop{position:fixed;bottom:100px;right:30px;background:var(--primary);color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;z-index:9990;}
+.sb-wa-box{background:linear-gradient(135deg,#075E54,#128C7E)!important;}
+.sb-wa-box h4{color:#fff!important;border-bottom-color:rgba(255,255,255,.2)!important;}
+.wa-sidebar-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;padding:11px 16px;border-radius:6px;font-weight:700;font-size:13px;text-decoration:none;transition:all .2s;width:100%;}
+.wa-sidebar-btn:hover{background:#1da851;}
+.footer-social{display:flex;gap:10px;margin-top:16px;}
+.social-btn{width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.12);transition:all .2s;}
+.social-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+@media(max-width:700px){.wa-cta-banner{flex-direction:column;text-align:center;}.wa-cta-btns{justify-content:center;}.wa-panel{width:260px;}}
+
+</style>
+</head>
+<body>
+<div class="reading-progress"></div>
+<div class="top-bar"><div class="container">
+  <div class="ti">
+    <div class="ci"><span class="ic">✉</span><a href="mailto:info@iterinimmigration.co.ke">info@iterinimmigration.co.ke</a></div>
+    <div class="ci"><span class="ic">📞</span><a href="tel:+254115250930">+254 115 250 930</a></div>
+    <div class="ci"><span class="ic">📍</span><span>Kaunda Street, Standard Building, 5th Floor</span></div>
+  </div>
+  <div class="cl">
+    <a href="https://wa.me/254115250930" class="cb">WhatsApp</a>
+    <a href="../index.html#contact" class="cb">Free Consultation</a>
+  </div>
+</div></div>
+<nav><div class="nav-inner">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon">II</div>
+    <div class="logo-text"><div class="brand">Iterin Immigration</div><div class="sub">Kenya's Trusted Consultants</div></div>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#about">About Us</a></li>
+    <li class="active">
+      <a href="../index.html#services">Services &#9662;</a>
+      <ul class="dropdown">
+        <li><a href="./entry-work-permits.html">Entry Work Permits</a></li>
+        <li class="sub-dd"><a href="./passes.html">Passes</a>
+          <ul class="dropdown">
+            <li><a href="./special-pass.html">Special Pass Application</a></li>
+            <li><a href="./students-pass.html">Students Pass</a></li>
+            <li><a href="./dependant-pass.html">Dependant Pass Application</a></li>
+            <li><a href="./kenya-visitors-pass.html">Kenya Visitors Pass</a></li>
+            <li><a href="./reentry-pass.html">Re-entry Pass Application</a></li>
+            <li><a href="./visitors-pass-extension.html">Visitors Pass Extension</a></li>
+          </ul>
+        </li>
+        <li><a href="./citizenship.html">Citizenship</a></li>
+        <li><a href="./permanent-residency.html">Permanent Residency Status</a></li>
+        <li><a href="./alien-registration.html">Alien Card / Foreign National Certificate</a></li>
+        <li><a href="./relocation-settlement.html">Relocation &amp; General Settlement</a></li>
+        <li><a href="./regularization.html">Regularization</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="./govt-services.html">Govt. Services &#9662;</a>
+      <ul class="dropdown">
+        <li><a href="./business-registration.html">Business Registration</a></li>
+        <li><a href="./kenya-revenue-authority.html">Kenya Revenue Authority</a></li>
+        <li><a href="./ntsa.html">National Transport &amp; Safety Authority</a></li>
+        <li><a href="./marriage-in-kenya.html">Marriage in Kenya</a></li>
+      </ul>
+    </li>
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li><a href="../index.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</div></nav>
+<div class="page-hero">
+  <div class="container">
+    <div class="container">
+    <div class="breadcrumb">
+      <a href="../">Home</a> &rsaquo;
+      <a href="./permanent-residency.html">Services</a> &rsaquo;
+      <span>Permanent Residency</span>
+    </div>
+    <h1>Permanent Residency Status</h1>
+    <p>We guide you through Kenya's permanent residency process under Section 37 of the Kenya Citizenship and Immigration Act, 2011.</p>
+  </div>
+  </div>
+</div>
+<section class="service-page">
+  <div class="container">
+    <div class="service-layout">
+      <main class="service-main">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80" alt="Permanent Residency Status" class="service-img">
+        
+<h2>Permanent Residency Status</h2>
+<div class="subtitle">Section 37 — Kenya Citizenship and Immigration Act, 2011</div>
+<div class="service-divider"></div>
+<p>Permanent Residency Status is a status granted under Section 37 of the Kenya Citizenship and Immigration Act of 2011 as read with the regulations. It is available to former citizens of Kenya, children of citizens born abroad, spouses of Kenyan citizens, and persons who have held valid work permits in Kenya for at least 7 years.</p>
+<h3>Categories of Permanent Residency</h3>
+<ul class="class-list">
+  <li>Category A — Ex-Citizens of Kenya</li>
+  <li>Category B — Work Permit Holders (7+ years)</li>
+  <li>Category C — Children of Kenyan Citizens who have acquired another citizenship</li>
+  <li>Category D — Spouses of Kenyan Citizens</li>
+</ul>
+<h3>Benefits of Permanent Residency</h3>
+<p>Permanent residents in Kenya enjoy a range of benefits including the right to reside in Kenya indefinitely, the ability to work without a separate work permit, access to most services available to citizens, and a pathway toward full Kenyan citizenship after the requisite period of lawful residence.</p>
+<h3>The Application Process</h3>
+<p>The permanent residency application process involves verifying eligibility, assembling extensive documentary evidence of continuous lawful residence, preparing and submitting the formal application to the Directorate of Immigration Services, and attending any required interviews or biometric sessions.</p>
+<h3>How We Help</h3>
+<p>Our team has extensive experience with permanent residency applications across all four categories. We assess your eligibility, organize your documentation, and manage the full application submission and follow-up — ensuring the best possible outcome for your application.</p>
+        <div class="wa-cta-banner">
+  <div class="wa-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+  <div class="wa-cta-text"><h3>Have Questions About This Service?</h3><p>Our immigration experts are ready to assist you. Chat with us on WhatsApp for fast, reliable answers — typically within minutes.</p></div>
+  <div class="wa-cta-btns">
+    <a href="https://wa.me/254115250930?text=Hello%20Iterin%20Immigration%2C%20I%20have%20a%20question%20about%20your%20services." target="_blank" class="wa-btn-green">&#128172; WhatsApp Us</a>
+    <a href="../index.html#contact" class="wa-btn-white">Book Consultation</a>
+  </div>
+</div>
+        <a href="../index.html#contact" class="btn-consult">📋 Book Free Consultation</a>
+      </main>
+      <aside class="service-sidebar">
+  <div class="sidebar-box sb-wa-box">
+    <h4>&#128172; Chat on WhatsApp</h4>
+    <p style="font-size:13px;color:var(--text-light);margin-bottom:12px;">Get instant answers from our immigration experts.</p>
+    <a href="https://wa.me/254115250930?text=Hello%20Iterin%20Immigration%2C%20I%20need%20immigration%20help." target="_blank" class="wa-sidebar-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:#fff;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Start WhatsApp Chat</a>
+  </div>
+  <div class="sidebar-box">
+    <h4>All Services</h4>
+    <ul class="sb-nav">
+      <li ><a href="./entry-work-permits.html">Entry Work Permits</a></li>
+      <li ><a href="./passes.html">Passes Overview</a></li>
+      <li ><a href="./special-pass.html">Special Pass</a></li>
+      <li ><a href="./students-pass.html">Students Pass</a></li>
+      <li ><a href="./dependant-pass.html">Dependant Pass</a></li>
+      <li ><a href="./kenya-visitors-pass.html">Kenya Visitors Pass</a></li>
+      <li ><a href="./reentry-pass.html">Re-entry Pass</a></li>
+      <li ><a href="./visitors-pass-extension.html">Visitors Pass Extension</a></li>
+      <li ><a href="./citizenship.html">Citizenship</a></li>
+      <li class="active"><a href="./permanent-residency.html">Permanent Residency</a></li>
+      <li ><a href="./alien-registration.html">Alien Card (ARC)</a></li>
+      <li ><a href="./relocation-settlement.html">Relocation &amp; Settlement</a></li>
+      <li ><a href="./regularization.html">Regularization</a></li>
+      <li ><a href="./govt-services.html">Govt. Services</a></li>
+      <li ><a href="./business-registration.html">Business Registration</a></li>
+      <li ><a href="./kenya-revenue-authority.html">Kenya Revenue Authority</a></li>
+      <li ><a href="./ntsa.html">NTSA Services</a></li>
+      <li ><a href="./marriage-in-kenya.html">Marriage in Kenya</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-cta">
+    <h4>Need Assistance?</h4>
+    <p>Free initial consultation. Speak with an expert today.</p>
+    <a href="https://wa.me/254115250930">WhatsApp Us Now</a>
+    <a href="../index.html#contact">Book Consultation</a>
+    <div class="sc-phone">📞 +254 115 250 930</div>
+  </div>
+</aside>
+    </div>
+  </div>
+</section>
+<footer class="site-footer"><div class="container"><div class="footer-grid">
+  <div class="footer-col">
+    <h4>Iterin Immigration</h4>
+    <p>A Government-authorized immigration consultancy delivering expert, compliant immigration services across Kenya. Your trusted partner for permits, passes, citizenship and settlement.</p>
+    <div class="fci"><div class="fci-icon">📍</div><div class="fci-text"><div class="lbl">Address</div><a href="#">Standard Building, 5th Floor, Kaunda Street, Nairobi</a></div></div>
+    <div class="fci"><div class="fci-icon">📞</div><div class="fci-text"><div class="lbl">Phone</div><a href="tel:+254115250930">+254 115 250 930</a></div></div>
+    <div class="fci"><div class="fci-icon">✉</div><div class="fci-text"><div class="lbl">Email</div><a href="mailto:info@iterinimmigration.co.ke">info@iterinimmigration.co.ke</a></div></div>
+    <div class="fci"><div class="fci-icon" style="background:#25D366;">&#128172;</div><div class="fci-text"><div class="lbl">WhatsApp</div><a href="https://wa.me/254115250930" target="_blank">Chat with us on WhatsApp</a></div></div>
+    <div class="footer-social">
+      <a href="#" class="social-btn">f</a>
+      <a href="#" class="social-btn">&#120143;</a>
+      <a href="https://wa.me/254115250930" class="social-btn" style="background:#25D366;color:#fff;border-color:#25D366;">&#128172;</a>
+      <a href="mailto:info@iterinimmigration.co.ke" class="social-btn">✉</a>
+      <a href="#" class="social-btn">in</a>
+    </div>
+  </div>
+  <div class="footer-col"><h4>Quick Links</h4><ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#about">About Us</a></li>
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li><a href="../index.html#contact">Contact Us</a></li>
+  </ul></div>
+  <div class="footer-col"><h4>Our Services</h4><ul>
+    <li><a href="./entry-work-permits.html">Entry Work Permits</a></li>
+    <li><a href="./passes.html">Passes</a></li>
+    <li><a href="./citizenship.html">Citizenship</a></li>
+    <li><a href="./permanent-residency.html">Permanent Residency</a></li>
+    <li><a href="./alien-registration.html">Alien Card (ARC)</a></li>
+    <li><a href="./relocation-settlement.html">Relocation &amp; Settlement</a></li>
+    <li><a href="./regularization.html">Regularization</a></li>
+    <li><a href="./govt-services.html">Govt. Services</a></li>
+  </ul></div>
+</div></div>
+<div class="footer-bottom">Copyright &copy; 2026 Iterin Immigration. All Rights Reserved. | Standard Building, 5th Floor, Kaunda Street, Nairobi</div>
+</footer>
+<div class="wa-float" id="waFloat">
+  <div class="wa-panel" id="waPanel">
+    <div class="wa-panel-head">
+      <div class="wa-avatar">II</div>
+      <div><div class="wa-name">Iterin Immigration</div><div class="wa-status"><span class="wa-status-dot"></span> Typically replies within minutes</div></div>
+      <button class="wa-close-btn" onclick="toggleWA()">&#x2715;</button>
+    </div>
+    <div class="wa-panel-body">
+      <div class="wa-msg">Hello! &#128075; Welcome to <strong>Iterin Immigration</strong>.<br><br>How can we help you today? We assist with:<br>&#8226; Work Permit enquiries<br>&#8226; Visa &amp; Pass applications<br>&#8226; Permanent Residency<br>&#8226; Relocation &amp; Settlement<div class="wa-msg-time">Just now</div></div>
+    </div>
+    <div class="wa-panel-footer"><a href="https://wa.me/254115250930?text=Hello%20Iterin%20Immigration%2C%20I%20would%20like%20to%20enquire%20about%20your%20immigration%20services." target="_blank">Start Chat on WhatsApp</a></div>
+  </div>
+  <a href="#" class="wa-bubble" onclick="toggleWA(); return false;" title="Chat on WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div><a href="#" id="backTop" title="Back to top">&#x2191;</a>
+<script>
+let waOpen=false;
+function toggleWA(){waOpen=!waOpen;document.getElementById('waPanel').classList.toggle('open',waOpen);}
+const rbar=document.querySelector('.reading-progress');
+if(rbar){window.addEventListener('scroll',()=>{const t=document.body.scrollHeight-window.innerHeight;rbar.style.width=(window.scrollY/t*100)+'%';});}
+window.addEventListener('scroll',()=>{const b=document.getElementById('backTop');if(b)b.style.opacity=window.scrollY>400?'1':'0';});
+document.querySelectorAll('.pass-card-head').forEach(h=>{h.addEventListener('click',()=>h.parentElement.classList.toggle('open'));});
+</script>
+</body>
+</html>
