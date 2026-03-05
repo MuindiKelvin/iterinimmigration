@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iterin Immigration | Trusted Kenya Immigration Consultants</title>
+<meta name="description" content="Iterin Immigration — Kenya's trusted, government-authorized immigration consultancy. Work permits, passes, permanent residency, citizenship, relocation and more.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -17,7 +18,11 @@
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { font-family:'Source Sans 3', sans-serif; color:var(--text); }
+body { font-family:'Source Sans 3', sans-serif; color:var(--text); background:#fff; }
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
+
+/* READING PROGRESS */
+.reading-progress { position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0%; z-index:9998; transition:width .1s linear; }
 
 /* TOP BAR */
 .top-bar { background:var(--dark); color:rgba(255,255,255,.85); font-size:13px; padding:8px 0; }
@@ -30,8 +35,6 @@ body { font-family:'Source Sans 3', sans-serif; color:var(--text); }
 .top-bar .cta-links { display:flex; gap:10px; align-items:center; }
 .top-bar .cta-btn { background:var(--accent); color:#fff !important; padding:4px 14px; border-radius:3px; font-weight:600; font-size:12px; transition:background .2s; }
 .top-bar .cta-btn:hover { background:var(--accent-light); }
-
-.container { max-width:1200px; margin:0 auto; padding:0 20px; }
 
 /* NAV */
 nav { background:#fff; box-shadow:0 2px 15px rgba(0,0,0,.1); position:sticky; top:0; z-index:999; }
@@ -56,7 +59,7 @@ nav { background:#fff; box-shadow:0 2px 15px rgba(0,0,0,.1); position:sticky; to
 .nav-cta:hover { background:var(--primary) !important; }
 
 /* HERO */
-.hero { position:relative; height:90vh; min-height:500px; overflow:hidden; }
+.hero { position:relative; height:90vh; min-height:520px; overflow:hidden; }
 .slides { height:100%; }
 .slide { position:absolute; inset:0; opacity:0; transition:opacity .8s ease; pointer-events:none; }
 .slide.active { opacity:1; pointer-events:auto; }
@@ -80,10 +83,10 @@ nav { background:#fff; box-shadow:0 2px 15px rgba(0,0,0,.1); position:sticky; to
 .dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,.4); cursor:pointer; border:2px solid transparent; transition:all .3s; }
 .dot.active { background:var(--accent); border-color:var(--accent-light); transform:scale(1.3); }
 .slider-arrows { position:absolute; bottom:24px; right:40px; z-index:3; display:flex; gap:8px; }
-.arrow { width:44px; height:44px; background:rgba(255,255,255,.15); border:2px solid rgba(255,255,255,.4); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:18px; transition:all .2s; }
+.arrow { width:44px; height:44px; background:rgba(255,255,255,.15); border:2px solid rgba(255,255,255,.4); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:18px; transition:all .2s; user-select:none; }
 .arrow:hover { background:var(--accent); border-color:var(--accent); }
 
-/* COMMON */
+/* SECTIONS */
 section { padding:80px 0; }
 .section-tag { font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
 .section-title { font-family:'Playfair Display',serif; font-size:clamp(26px,4vw,40px); color:var(--primary); line-height:1.25; margin-bottom:16px; }
@@ -147,12 +150,12 @@ section { padding:80px 0; }
 .stat-label { font-size:14px; color:rgba(255,255,255,.75); text-transform:uppercase; letter-spacing:2px; font-weight:600; }
 
 /* EMERGENCY CTA */
-.emergency-cta { background:var(--accent); padding:30px 0; }
+.emergency-cta { background:var(--accent); padding:32px 0; }
 .emergency-cta .inner { display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; text-align:center; }
 .emergency-cta .phone-label { font-size:14px; color:rgba(255,255,255,.85); margin-bottom:4px; }
 .emergency-cta .e-phone { font-family:'Playfair Display',serif; font-size:26px; color:#fff; font-weight:700; }
-.emergency-cta p { color:rgba(255,255,255,.9); font-size:15px; max-width:500px; }
-.btn-white { background:#fff; color:var(--accent); padding:14px 28px; border-radius:4px; font-weight:700; font-size:14px; text-decoration:none; white-space:nowrap; transition:all .2s; }
+.emergency-cta p { color:rgba(255,255,255,.9); font-size:15px; max-width:500px; line-height:1.6; }
+.btn-white { background:#fff; color:var(--accent); padding:14px 28px; border-radius:4px; font-weight:700; font-size:14px; text-decoration:none; white-space:nowrap; transition:all .2s; display:inline-block; }
 .btn-white:hover { background:var(--primary); color:#fff; }
 
 /* WHY CHOOSE */
@@ -164,6 +167,34 @@ section { padding:80px 0; }
 .why-icon { width:48px; height:48px; flex-shrink:0; background:var(--primary); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:20px; color:#fff; }
 .why-body h4 { font-size:16px; font-weight:700; color:var(--primary); margin-bottom:4px; }
 .why-body p { font-size:14px; color:var(--text-light); line-height:1.6; }
+
+/* WHATSAPP IN-PAGE CTA BANNER */
+.wa-section-cta { background:linear-gradient(135deg,#075E54,#128C7E); padding:48px 0; }
+.wa-section-inner { display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:center; text-align:center; }
+.wa-section-icon { width:72px; height:72px; background:rgba(255,255,255,.15); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.wa-section-icon svg { width:40px; height:40px; fill:#fff; }
+.wa-section-text h2 { font-family:'Playfair Display',serif; color:#fff; font-size:clamp(20px,3vw,30px); margin-bottom:8px; }
+.wa-section-text p { color:rgba(255,255,255,.88); font-size:15px; line-height:1.6; max-width:500px; }
+.wa-section-btns { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:20px; }
+.wa-btn-green { background:#25D366; color:#fff; padding:14px 28px; border-radius:5px; font-weight:700; font-size:14px; text-decoration:none; transition:all .2s; display:inline-flex; align-items:center; gap:8px; }
+.wa-btn-green:hover { background:#1da851; transform:translateY(-2px); }
+.wa-btn-outline-white { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.6); padding:14px 28px; border-radius:5px; font-weight:700; font-size:14px; text-decoration:none; transition:all .2s; display:inline-flex; align-items:center; gap:8px; }
+.wa-btn-outline-white:hover { border-color:#fff; background:rgba(255,255,255,.12); }
+
+/* TESTIMONIALS */
+.testimonials { background:#fff; padding:80px 0; }
+.testimonials-header { text-align:center; margin-bottom:48px; }
+.testimonials-header .section-divider { margin:0 auto 20px; }
+.testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px; }
+.testi-card { background:var(--light); border-radius:8px; padding:32px; position:relative; border-left:4px solid var(--accent); transition:all .3s; }
+.testi-card:hover { box-shadow:0 8px 30px rgba(0,0,0,.1); transform:translateY(-4px); }
+.testi-quote { font-size:50px; color:var(--accent); line-height:1; font-family:'Playfair Display',serif; position:absolute; top:14px; left:20px; opacity:.25; }
+.testi-text { color:var(--text-light); font-size:15px; line-height:1.8; margin-bottom:20px; padding-top:18px; font-style:italic; }
+.testi-author { display:flex; align-items:center; gap:12px; }
+.testi-avatar { width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--dark)); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:16px; flex-shrink:0; }
+.testi-info .tname { font-weight:700; color:var(--primary); font-size:15px; }
+.testi-info .tdetail { font-size:12px; color:var(--accent); font-weight:600; }
+.testi-stars { color:var(--accent-light); font-size:14px; margin-bottom:12px; letter-spacing:2px; }
 
 /* MAP */
 .map-section { background:#fff; padding:80px 0; }
@@ -187,8 +218,8 @@ section { padding:80px 0; }
 .blog-header { text-align:center; margin-bottom:48px; }
 .blog-header .section-divider { margin:0 auto 20px; }
 .blog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:28px; }
-.blog-card { background:#fff; border-radius:6px; overflow:hidden; transition:all .3s; text-decoration:none; display:block; }
-.blog-card:hover { box-shadow:0 8px 30px rgba(0,0,0,.1); transform:translateY(-4px); }
+.blog-card { background:#fff; border-radius:6px; overflow:hidden; transition:all .3s; text-decoration:none; display:block; box-shadow:0 2px 12px rgba(0,0,0,.06); }
+.blog-card:hover { box-shadow:0 8px 30px rgba(0,0,0,.12); transform:translateY(-4px); }
 .blog-card-img { height:180px; overflow:hidden; }
 .blog-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
 .blog-card:hover .blog-card-img img { transform:scale(1.06); }
@@ -204,47 +235,6 @@ section { padding:80px 0; }
 .btn-outline-dark { display:inline-flex; align-items:center; gap:8px; border:2px solid var(--primary); color:var(--primary); padding:13px 32px; border-radius:4px; font-weight:700; font-size:14px; text-decoration:none; transition:all .2s; }
 .btn-outline-dark:hover { background:var(--primary); color:#fff; }
 
-/* WHATSAPP FLOAT */
-.wa-float { position:fixed; bottom:28px; right:28px; z-index:9999; display:flex; flex-direction:column; align-items:flex-end; gap:12px; }
-.wa-bubble { background:#25D366; color:#fff; width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(37,211,102,.45); cursor:pointer; text-decoration:none; transition:all .3s; position:relative; }
-.wa-bubble:hover { transform:scale(1.12); box-shadow:0 10px 32px rgba(37,211,102,.55); }
-.wa-bubble svg { width:32px; height:32px; fill:#fff; }
-.wa-bubble .wa-pulse { position:absolute; inset:-4px; border-radius:50%; border:3px solid rgba(37,211,102,.45); animation:waPulse 2s infinite; }
-@keyframes waPulse { 0%{transform:scale(1);opacity:1} 100%{transform:scale(1.5);opacity:0} }
-.wa-tooltip { background:var(--dark); color:#fff; font-size:13px; font-weight:600; padding:8px 16px; border-radius:6px; white-space:nowrap; box-shadow:0 4px 16px rgba(0,0,0,.2); position:relative; }
-.wa-tooltip::after { content:''; position:absolute; right:14px; bottom:-6px; width:12px; height:12px; background:var(--dark); transform:rotate(45deg); border-radius:2px; }
-.wa-panel { background:#fff; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,.18); width:300px; overflow:hidden; display:none; margin-bottom:8px; animation:waPop .3s ease; }
-@keyframes waPop { from{opacity:0;transform:scale(.9) translateY(10px)} to{opacity:1;transform:scale(1) translateY(0)} }
-.wa-panel.open { display:block; }
-.wa-panel-head { background:linear-gradient(135deg,#075E54,#128C7E); padding:20px; color:#fff; display:flex; align-items:center; gap:14px; }
-.wa-panel-head .wa-avatar { width:46px; height:46px; background:rgba(255,255,255,.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:700; flex-shrink:0; }
-.wa-panel-head .wa-name { font-weight:700; font-size:15px; margin-bottom:2px; }
-.wa-panel-head .wa-status { font-size:12px; opacity:.85; display:flex; align-items:center; gap:5px; }
-.wa-status-dot { width:8px; height:8px; background:#4ade80; border-radius:50%; display:inline-block; }
-.wa-panel-body { padding:20px; background:#ECE5DD; }
-.wa-msg { background:#fff; border-radius:8px 8px 8px 0; padding:12px 14px; font-size:14px; color:#333; line-height:1.6; box-shadow:0 1px 4px rgba(0,0,0,.1); margin-bottom:12px; position:relative; }
-.wa-msg::before { content:''; position:absolute; bottom:-6px; left:-6px; width:14px; height:14px; background:#fff; clip-path:polygon(100% 0, 100% 100%, 0 100%); }
-.wa-msg-time { font-size:11px; color:#999; text-align:right; margin-top:4px; }
-.wa-panel-footer { padding:16px; background:#f0f0f0; display:flex; gap:10px; align-items:center; }
-.wa-panel-footer a { flex:1; background:#25D366; color:#fff; border:none; padding:12px 16px; border-radius:8px; font-size:14px; font-weight:700; cursor:pointer; text-align:center; text-decoration:none; transition:background .2s; display:block; }
-.wa-panel-footer a:hover { background:#1da851; }
-.wa-close-btn { position:absolute; top:12px; right:12px; background:rgba(255,255,255,.2); border:none; width:28px; height:28px; border-radius:50%; color:#fff; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; }
-
-/* TESTIMONIALS */
-.testimonials { background:#fff; padding:80px 0; }
-.testimonials-header { text-align:center; margin-bottom:48px; }
-.testimonials-header .section-divider { margin:0 auto 20px; }
-.testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px; }
-.testi-card { background:var(--light); border-radius:8px; padding:32px; position:relative; border-left:4px solid var(--accent); transition:all .3s; }
-.testi-card:hover { box-shadow:0 8px 30px rgba(0,0,0,.1); transform:translateY(-4px); }
-.testi-quote { font-size:50px; color:var(--accent); line-height:1; font-family:'Playfair Display',serif; position:absolute; top:14px; left:20px; opacity:.25; }
-.testi-text { color:var(--text-light); font-size:15px; line-height:1.8; margin-bottom:20px; padding-top:18px; font-style:italic; }
-.testi-author { display:flex; align-items:center; gap:12px; }
-.testi-avatar { width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--dark)); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:16px; flex-shrink:0; }
-.testi-info .tname { font-weight:700; color:var(--primary); font-size:15px; }
-.testi-info .tdetail { font-size:12px; color:var(--accent); font-weight:600; }
-.testi-stars { color:var(--accent-light); font-size:14px; margin-bottom:12px; letter-spacing:2px; }
-
 /* FOOTER */
 .contact-footer { background:var(--dark); color:#fff; padding:70px 0 0; }
 .contact-footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:50px; padding-bottom:50px; }
@@ -256,11 +246,11 @@ section { padding:80px 0; }
 .fci-text a:hover { color:var(--accent-light); }
 .fci-text span { display:block; font-size:11px; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:1px; margin-bottom:2px; }
 .qform h4 { font-size:12px; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:2px; margin-bottom:14px; margin-top:24px; }
-.qform input,.qform select,.qform textarea { width:100%; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:#fff; padding:11px 13px; border-radius:4px; font-family:inherit; font-size:14px; margin-bottom:9px; outline:none; transition:border-color .2s; }
-.qform input:focus,.qform select:focus,.qform textarea:focus { border-color:var(--accent); }
+.qform input, .qform select, .qform textarea { width:100%; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:#fff; padding:11px 13px; border-radius:4px; font-family:inherit; font-size:14px; margin-bottom:9px; outline:none; transition:border-color .2s; }
+.qform input:focus, .qform select:focus, .qform textarea:focus { border-color:var(--accent); }
 .qform select option { background:var(--dark); }
-.qform textarea { resize:vertical; min-height:75px; }
-.qform button { background:var(--accent); color:#fff; border:none; padding:12px; border-radius:4px; font-weight:700; font-size:14px; cursor:pointer; width:100%; transition:background .2s; }
+.qform textarea { resize:vertical; min-height:80px; }
+.qform button { background:var(--accent); color:#fff; border:none; padding:13px; border-radius:4px; font-weight:700; font-size:14px; cursor:pointer; width:100%; transition:background .2s; }
 .qform button:hover { background:var(--accent-light); }
 .footer-links h4 { font-family:'Playfair Display',serif; font-size:18px; color:var(--accent-light); margin-bottom:20px; }
 .footer-links ul { list-style:none; }
@@ -273,9 +263,40 @@ section { padding:80px 0; }
 .social-btn:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
 .footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding:20px; text-align:center; font-size:13px; color:rgba(255,255,255,.5); }
 
+/* WHATSAPP FLOATING WIDGET */
+.wa-float { position:fixed; bottom:28px; right:28px; z-index:9999; display:flex; flex-direction:column; align-items:flex-end; gap:12px; }
+.wa-bubble { background:#25D366; color:#fff; width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(37,211,102,.45); cursor:pointer; text-decoration:none; transition:all .3s; position:relative; }
+.wa-bubble:hover { transform:scale(1.12); box-shadow:0 10px 32px rgba(37,211,102,.55); }
+.wa-bubble svg { width:32px; height:32px; fill:#fff; }
+.wa-bubble .wa-pulse { position:absolute; inset:-4px; border-radius:50%; border:3px solid rgba(37,211,102,.45); animation:waPulse 2s infinite; }
+@keyframes waPulse { 0%{transform:scale(1);opacity:1} 100%{transform:scale(1.5);opacity:0} }
+.wa-tooltip { background:var(--dark); color:#fff; font-size:13px; font-weight:600; padding:8px 16px; border-radius:6px; white-space:nowrap; box-shadow:0 4px 16px rgba(0,0,0,.2); position:relative; display:none; }
+.wa-tooltip::after { content:''; position:absolute; right:14px; bottom:-6px; width:12px; height:12px; background:var(--dark); transform:rotate(45deg); border-radius:2px; }
+.wa-panel { background:#fff; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,.18); width:300px; overflow:hidden; display:none; margin-bottom:8px; }
+.wa-panel.open { display:block; animation:waPop .3s ease; }
+@keyframes waPop { from{opacity:0;transform:scale(.9) translateY(10px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.wa-panel-head { background:linear-gradient(135deg,#075E54,#128C7E); padding:20px; color:#fff; display:flex; align-items:center; gap:14px; position:relative; }
+.wa-panel-head .wa-avatar { width:46px; height:46px; background:rgba(255,255,255,.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:700; flex-shrink:0; }
+.wa-panel-head .wa-name { font-weight:700; font-size:15px; margin-bottom:2px; }
+.wa-panel-head .wa-status { font-size:12px; opacity:.85; display:flex; align-items:center; gap:5px; }
+.wa-status-dot { width:8px; height:8px; background:#4ade80; border-radius:50%; display:inline-block; }
+.wa-close-btn { position:absolute; top:12px; right:12px; background:rgba(255,255,255,.2); border:none; width:28px; height:28px; border-radius:50%; color:#fff; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+.wa-close-btn:hover { background:rgba(255,255,255,.35); }
+.wa-panel-body { padding:20px; background:#ECE5DD; }
+.wa-msg { background:#fff; border-radius:8px 8px 8px 0; padding:12px 14px; font-size:14px; color:#333; line-height:1.6; box-shadow:0 1px 4px rgba(0,0,0,.1); margin-bottom:12px; }
+.wa-msg-time { font-size:11px; color:#999; text-align:right; margin-top:4px; }
+.wa-panel-footer { padding:16px; background:#f0f0f0; }
+.wa-panel-footer a { display:block; background:#25D366; color:#fff; padding:12px 16px; border-radius:8px; font-size:14px; font-weight:700; text-align:center; text-decoration:none; transition:background .2s; }
+.wa-panel-footer a:hover { background:#1da851; }
+
+/* BACK TO TOP */
+#backTop { position:fixed; bottom:100px; right:30px; background:var(--primary); color:#fff; width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; text-decoration:none; box-shadow:0 4px 16px rgba(0,0,0,.2); opacity:0; transition:opacity .3s, transform .2s; z-index:9990; }
+#backTop:hover { transform:translateY(-3px); }
+
 /* MODALS */
 .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:2000; align-items:center; justify-content:center; padding:20px; }
-.modal.open { display:flex; }
+.modal.open { display:flex; animation:modalFade .25s ease; }
+@keyframes modalFade { from{opacity:0} to{opacity:1} }
 .modal-box { background:#fff; border-radius:8px; max-width:580px; width:100%; max-height:85vh; overflow-y:auto; position:relative; padding:40px; }
 .modal-close { position:absolute; top:16px; right:16px; background:var(--light); border:none; width:34px; height:34px; border-radius:50%; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--text); transition:background .2s; }
 .modal-close:hover { background:var(--accent); color:#fff; }
@@ -291,11 +312,28 @@ section { padding:80px 0; }
 
 /* RESPONSIVE */
 @media(max-width:960px) { .services-grid { grid-template-columns:1fr 1fr; } }
-@media(max-width:900px) { .about-grid,.why-grid { grid-template-columns:1fr; } .map-inner { grid-template-columns:1fr; } .contact-footer-grid { grid-template-columns:1fr; } .about-img-wrap img { height:300px; } .about-badge { right:10px; } .services-grid { grid-template-columns:1fr; } }
-@media(max-width:700px) { .stats-grid { grid-template-columns:repeat(2,1fr); gap:30px; } .nav-menu { display:none; } .slide-content { padding:30px 20px; } .wa-panel { width:260px; } }
+@media(max-width:900px) {
+  .about-grid, .why-grid { grid-template-columns:1fr; }
+  .map-inner { grid-template-columns:1fr; }
+  .contact-footer-grid { grid-template-columns:1fr; }
+  .about-img-wrap img { height:300px; }
+  .about-badge { right:10px; }
+  .services-grid { grid-template-columns:1fr; }
+  .wa-section-inner { text-align:center; }
+}
+@media(max-width:700px) {
+  .stats-grid { grid-template-columns:repeat(2,1fr); gap:30px; }
+  .nav-menu { display:none; }
+  .slide-content { padding:30px 20px; }
+  .wa-panel { width:260px; }
+  .slider-controls { left:20px; }
+  .slider-arrows { right:20px; }
+}
 </style>
 </head>
 <body>
+
+<div class="reading-progress" id="readingProgress"></div>
 
 <!-- TOP BAR -->
 <div class="top-bar">
@@ -327,7 +365,7 @@ section { padding:80px 0; }
       <li class="active"><a href="index.html">Home</a></li>
       <li><a href="#about">About Us</a></li>
       <li>
-        <a href="#services">Services ▾</a>
+        <a href="#services">Services &#9662;</a>
         <ul class="dropdown">
           <li><a href="services/entry-work-permits.html">Entry Work Permits</a></li>
           <li class="sub-dd">
@@ -349,7 +387,7 @@ section { padding:80px 0; }
         </ul>
       </li>
       <li>
-        <a href="#services">Govt. Services ▾</a>
+        <a href="services/govt-services.html">Govt. Services &#9662;</a>
         <ul class="dropdown">
           <li><a href="services/business-registration.html">Business Registration</a></li>
           <li><a href="services/kenya-revenue-authority.html">Kenya Revenue Authority</a></li>
@@ -363,7 +401,7 @@ section { padding:80px 0; }
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO SLIDER -->
 <section class="hero">
   <div class="slides">
     <div class="slide active">
@@ -651,7 +689,7 @@ section { padding:80px 0; }
 
 <!-- EMERGENCY CTA -->
 <div class="emergency-cta">
-  <div class="inner">
+  <div class="inner container">
     <div>
       <div class="phone-label">📞 24/7 Immigration Helpline</div>
       <div class="e-phone">Call: +254 115 250 930</div>
@@ -683,6 +721,31 @@ section { padding:80px 0; }
   </div>
 </section>
 
+<!-- WHATSAPP IN-PAGE CTA -->
+<div class="wa-section-cta">
+  <div class="container">
+    <div class="wa-section-inner reveal">
+      <div class="wa-section-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div>
+        <div class="wa-section-text">
+          <h2>Have an Immigration Question? Chat With Us Now</h2>
+          <p>Our experts are on WhatsApp and typically respond within minutes. Get real answers about work permits, passes, residency, and more — no appointment needed.</p>
+        </div>
+        <div class="wa-section-btns">
+          <a href="https://wa.me/254115250930?text=Hello%20Iterin%20Immigration%2C%20I%20would%20like%20to%20enquire%20about%20your%20immigration%20services." target="_blank" class="wa-btn-green">
+            &#128172; Start WhatsApp Chat
+          </a>
+          <a href="#contact" class="wa-btn-outline-white">
+            &#128203; Book a Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
   <div class="container">
@@ -693,20 +756,20 @@ section { padding:80px 0; }
     </div>
     <div class="testimonials-grid reveal">
       <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">&ldquo;</div>
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="testi-text">Iterin handled our entire family's relocation to Nairobi, including work permits for myself and a students pass for our daughter. The process was smooth, fast, and stress-free. We couldn't be happier.</p>
-        <div class="testi-author"><div class="testi-avatar">J</div><div class="testi-info"><div class="tname">James Okafor</div><div class="tdetail">Class D Work Permit, Lagos → Nairobi</div></div></div>
+        <div class="testi-author"><div class="testi-avatar">J</div><div class="testi-info"><div class="tname">James Okafor</div><div class="tdetail">Class D Work Permit, Lagos &rarr; Nairobi</div></div></div>
       </div>
       <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">&ldquo;</div>
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="testi-text">After years on work permits, Iterin guided me through my permanent residency application. Their knowledge of Category B requirements was exceptional. My PR was approved in under 4 months.</p>
         <div class="testi-author"><div class="testi-avatar">S</div><div class="testi-info"><div class="tname">Sophia Martins</div><div class="tdetail">Permanent Residency, Category B</div></div></div>
       </div>
       <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">&ldquo;</div>
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="testi-text">I had an overstay issue and was very anxious. Iterin handled my regularization quietly and professionally. Within 6 weeks I had a clean status. I recommend them to anyone with complex immigration situations.</p>
         <div class="testi-author"><div class="testi-avatar">A</div><div class="testi-info"><div class="tname">Ahmed Al-Rashid</div><div class="tdetail">Regularization Service</div></div></div>
       </div>
@@ -714,7 +777,7 @@ section { padding:80px 0; }
   </div>
 </section>
 
-<!-- MAP -->
+<!-- MAP / LOCATION -->
 <section class="map-section" id="location">
   <div class="container">
     <div class="map-header reveal">
@@ -729,7 +792,7 @@ section { padding:80px 0; }
         <div class="map-ci"><div class="map-ci-icon">📍</div><div class="map-ci-text"><div class="lbl">Office Address</div><span>Standard Building, 5th Floor<br>Kaunda Street, Nairobi CBD</span></div></div>
         <div class="map-ci"><div class="map-ci-icon">📞</div><div class="map-ci-text"><div class="lbl">Phone</div><a href="tel:+254115250930">+254 115 250 930</a></div></div>
         <div class="map-ci"><div class="map-ci-icon">✉</div><div class="map-ci-text"><div class="lbl">Email</div><a href="mailto:info@iterinimmigration.co.ke">info@iterinimmigration.co.ke</a></div></div>
-        <div class="map-ci"><div class="map-ci-icon">🕐</div><div class="map-ci-text"><div class="lbl">Office Hours</div><span>Mon – Fri: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 1:00 PM</span></div></div>
+        <div class="map-ci"><div class="map-ci-icon">🕐</div><div class="map-ci-text"><div class="lbl">Office Hours</div><span>Mon &ndash; Fri: 8:00 AM &ndash; 6:00 PM<br>Saturday: 9:00 AM &ndash; 1:00 PM</span></div></div>
         <a href="https://maps.google.com/?q=Standard+Building+Kaunda+Street+Nairobi+Kenya" target="_blank" class="map-dir">📌 Get Directions</a>
       </div>
       <div class="map-embed">
@@ -739,7 +802,7 @@ section { padding:80px 0; }
   </div>
 </section>
 
-<!-- BLOG — updated with blog/ folder links & 2026 dates -->
+<!-- BLOG -->
 <section class="blog" id="blog">
   <div class="container">
     <div class="blog-header reveal">
@@ -782,12 +845,12 @@ section { padding:80px 0; }
       </a>
     </div>
     <div class="blog-view-all reveal">
-      <a href="blog/index.html" class="btn-outline-dark">View All Articles &nbsp;→</a>
+      <a href="blog/index.html" class="btn-outline-dark">View All Articles &nbsp;&rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER / CONTACT -->
 <footer class="contact-footer" id="contact">
   <div class="container">
     <div class="contact-footer-grid reveal">
@@ -797,12 +860,12 @@ section { padding:80px 0; }
         <div class="fci"><div class="fci-icon">📍</div><div class="fci-text"><span>Address</span><a href="#">Standard Building, 5th Floor, Kaunda Street, Nairobi</a></div></div>
         <div class="fci"><div class="fci-icon">📞</div><div class="fci-text"><span>Phone</span><a href="tel:+254115250930">+254 115 250 930</a></div></div>
         <div class="fci"><div class="fci-icon">✉</div><div class="fci-text"><span>Email</span><a href="mailto:info@iterinimmigration.co.ke">info@iterinimmigration.co.ke</a></div></div>
-        <div class="fci"><div class="fci-icon" style="background:#25D366;">💬</div><div class="fci-text"><span>WhatsApp</span><a href="https://wa.me/254115250930" target="_blank">Chat with us on WhatsApp</a></div></div>
+        <div class="fci"><div class="fci-icon" style="background:#25D366;">&#128172;</div><div class="fci-text"><span>WhatsApp</span><a href="https://wa.me/254115250930" target="_blank">Chat with us on WhatsApp</a></div></div>
         <div class="qform">
           <h4>Quick Message</h4>
-          <input type="text" placeholder="Your Name">
-          <input type="email" placeholder="Your Email">
-          <select>
+          <input type="text" placeholder="Your Name" id="qName">
+          <input type="email" placeholder="Your Email" id="qEmail">
+          <select id="qType">
             <option value="">Enquiry Type</option>
             <option>Work Permit</option>
             <option>Special / Student / Dependent Pass</option>
@@ -815,7 +878,7 @@ section { padding:80px 0; }
             <option>Government Services</option>
             <option>General Enquiry</option>
           </select>
-          <textarea placeholder="Your Message"></textarea>
+          <textarea placeholder="Your Message" id="qMsg"></textarea>
           <button type="button" id="sendBtn">Send Message</button>
         </div>
       </div>
@@ -833,8 +896,8 @@ section { padding:80px 0; }
         </ul>
         <div class="footer-social">
           <a href="#" class="social-btn" title="Facebook">f</a>
-          <a href="#" class="social-btn" title="Twitter / X">𝕏</a>
-          <a href="https://wa.me/254115250930" class="social-btn" title="WhatsApp" style="background:#25D366;color:#fff;border-color:#25D366;">💬</a>
+          <a href="#" class="social-btn" title="Twitter / X">&#120143;</a>
+          <a href="https://wa.me/254115250930" class="social-btn" title="WhatsApp" style="background:#25D366;color:#fff;border-color:#25D366;">&#128172;</a>
           <a href="mailto:info@iterinimmigration.co.ke" class="social-btn" title="Email">✉</a>
           <a href="#" class="social-btn" title="LinkedIn">in</a>
         </div>
@@ -864,22 +927,22 @@ section { padding:80px 0; }
 <!-- WHATSAPP FLOATING WIDGET -->
 <div class="wa-float" id="waFloat">
   <div class="wa-panel" id="waPanel">
-    <div class="wa-panel-head" style="position:relative;">
+    <div class="wa-panel-head">
       <div class="wa-avatar">II</div>
       <div>
         <div class="wa-name">Iterin Immigration</div>
         <div class="wa-status"><span class="wa-status-dot"></span> Typically replies within minutes</div>
       </div>
-      <button class="wa-close-btn" onclick="toggleWA()" title="Close">✕</button>
+      <button class="wa-close-btn" onclick="toggleWA()" title="Close">&#x2715;</button>
     </div>
     <div class="wa-panel-body">
       <div class="wa-msg">
-        Hello! 👋 Welcome to <strong>Iterin Immigration</strong>.<br><br>
+        Hello! &#128075; Welcome to <strong>Iterin Immigration</strong>.<br><br>
         How can we help you today? We're available for:<br>
-        • Work Permit enquiries<br>
-        • Visa &amp; Pass applications<br>
-        • Relocation support<br>
-        • Any immigration question
+        &bull; Work Permit enquiries<br>
+        &bull; Visa &amp; Pass applications<br>
+        &bull; Relocation support<br>
+        &bull; Any immigration question
         <div class="wa-msg-time">Just now</div>
       </div>
     </div>
@@ -896,9 +959,12 @@ section { padding:80px 0; }
   </a>
 </div>
 
-<!-- MODALS -->
+<!-- BACK TO TOP -->
+<a href="#" id="backTop" title="Back to top">&#x2191;</a>
+
+<!-- TEAM MODALS -->
 <div class="modal" id="m1"><div class="modal-box">
-  <button class="modal-close" onclick="closeModal('m1')">✕</button>
+  <button class="modal-close" onclick="closeModal('m1')">&#x2715;</button>
   <h2>Millicent Wanja</h2><div class="modal-role">Founder &amp; CEO</div>
   <p>Millicent Wanja is the Founder and CEO of Iterin Immigration. With over five years of dedicated experience in Kenya's immigration sector, she has built Iterin into one of Nairobi's most trusted immigration consultancies.</p>
   <p>Her deep understanding of Kenya's Immigration Act, Nationality and Citizenship Laws, and the Directorate of Immigration Services procedures enables her to provide strategic, compliant, and timely solutions for individuals and organizations relocating to Kenya.</p>
@@ -906,34 +972,50 @@ section { padding:80px 0; }
   <ul><li>Work Permit Applications (All Classes)</li><li>Permanent Residency &amp; Citizenship</li><li>Corporate Immigration Strategy</li><li>Government Liaison &amp; Regulatory Compliance</li><li>Relocation &amp; Integration Support</li></ul>
 </div></div>
 <div class="modal" id="m2"><div class="modal-box">
-  <button class="modal-close" onclick="closeModal('m2')">✕</button>
+  <button class="modal-close" onclick="closeModal('m2')">&#x2715;</button>
   <h2>David Kamau</h2><div class="modal-role">Senior Immigration Consultant</div>
   <p>David is a Senior Immigration Consultant with extensive experience handling complex immigration cases for multinational corporations, SMEs, and individuals. He specializes in work permit applications, dependant passes, and corporate immigration compliance.</p>
   <h4>Qualifications</h4>
   <ul><li>Certified Immigration Consultant</li><li>Specialist in Class G &amp; Class M Permits</li><li>Corporate Immigration Advisory</li></ul>
 </div></div>
 <div class="modal" id="m3"><div class="modal-box">
-  <button class="modal-close" onclick="closeModal('m3')">✕</button>
+  <button class="modal-close" onclick="closeModal('m3')">&#x2715;</button>
   <h2>Grace Njoroge</h2><div class="modal-role">Compliance &amp; Regulatory Officer</div>
   <p>Grace oversees all compliance and regulatory matters at Iterin. She ensures every client file meets the full requirements of the Kenya Immigration Act, minimizing delays and rejection risks. She monitors regulatory updates from the Directorate of Immigration Services and the Ministry of Interior to keep Iterin's practices fully current.</p>
 </div></div>
 <div class="modal" id="m4"><div class="modal-box">
-  <button class="modal-close" onclick="closeModal('m4')">✕</button>
+  <button class="modal-close" onclick="closeModal('m4')">&#x2715;</button>
   <h2>Peter Otieno</h2><div class="modal-role">Relocation Specialist</div>
   <p>Peter leads Iterin's relocation and settlement division, helping expatriates and their families make a smooth transition to life in Kenya. He coordinates housing advisory, school search, community integration, and practical settlement logistics across Nairobi and other Kenyan cities.</p>
 </div></div>
 <div class="modal" id="m5"><div class="modal-box">
-  <button class="modal-close" onclick="closeModal('m5')">✕</button>
+  <button class="modal-close" onclick="closeModal('m5')">&#x2715;</button>
   <h2>Amina Hassan</h2><div class="modal-role">Client Relations Manager</div>
   <p>Amina manages all client relationships at Iterin, ensuring every client receives prompt and empathetic communication throughout their immigration journey. She is multilingual — supporting clients in English, Swahili, and Somali — making Iterin accessible across the region.</p>
 </div></div>
 
 <script>
-// SLIDER
-let cur = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-let timer;
+// READING PROGRESS BAR
+window.addEventListener('scroll', function() {
+  var rp = document.getElementById('readingProgress');
+  var total = document.body.scrollHeight - window.innerHeight;
+  if (rp && total > 0) rp.style.width = (window.scrollY / total * 100) + '%';
+  // BACK TO TOP
+  var bt = document.getElementById('backTop');
+  if (bt) bt.style.opacity = window.scrollY > 400 ? '1' : '0';
+});
+
+// BACK TO TOP CLICK
+document.getElementById('backTop').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// HERO SLIDER
+var cur = 0;
+var slides = document.querySelectorAll('.slide');
+var dots = document.querySelectorAll('.dot');
+var timer;
 function goTo(n) {
   slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
   cur = (n + slides.length) % slides.length;
@@ -941,23 +1023,23 @@ function goTo(n) {
   resetTimer();
 }
 function changeSlide(d) { goTo(cur + d); }
-function resetTimer() { clearInterval(timer); timer = setInterval(() => changeSlide(1), 5500); }
+function resetTimer() { clearInterval(timer); timer = setInterval(function(){ changeSlide(1); }, 5500); }
 resetTimer();
 
 // SCROLL REVEAL
-const obs = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); obs.unobserve(e.target); }
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e, i) {
+    if (e.isIntersecting) { setTimeout(function(){ e.target.classList.add('visible'); }, i * 80); obs.unobserve(e.target); }
   });
 }, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
 
 // STAT COUNTER
-document.querySelectorAll('.stat-number[data-target]').forEach(el => {
-  const so = new IntersectionObserver(entries => {
+document.querySelectorAll('.stat-number[data-target]').forEach(function(el) {
+  var so = new IntersectionObserver(function(entries) {
     if (entries[0].isIntersecting) {
-      const target = +el.dataset.target; let n = 0, step = target / 60;
-      const iv = setInterval(() => {
+      var target = +el.dataset.target; var n = 0; var step = target / 60;
+      var iv = setInterval(function() {
         n = Math.min(n + step, target);
         el.textContent = Math.floor(n).toLocaleString();
         if (n >= target) { clearInterval(iv); el.textContent = target.toLocaleString(); }
@@ -968,44 +1050,57 @@ document.querySelectorAll('.stat-number[data-target]').forEach(el => {
   so.observe(el);
 });
 
-// MODALS
-function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
-document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => { if(e.target===m) closeModal(m.id); }));
+// TEAM MODALS
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+document.querySelectorAll('.modal').forEach(function(m) {
+  m.addEventListener('click', function(e) { if (e.target === m) closeModal(m.id); });
+});
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') document.querySelectorAll('.modal.open').forEach(function(m){ closeModal(m.id); });
+});
 
-// FORM
+// CONTACT FORM
 document.getElementById('sendBtn').addEventListener('click', function() {
-  this.textContent = "✓ Sent! We'll be in touch shortly.";
+  var name = document.getElementById('qName').value.trim();
+  var email = document.getElementById('qEmail').value.trim();
+  if (!name || !email) {
+    this.textContent = '⚠ Please fill in Name and Email';
+    this.style.background = '#c0392b';
+    var btn = this;
+    setTimeout(function(){ btn.textContent = 'Send Message'; btn.style.background = ''; }, 2500);
+    return;
+  }
+  this.textContent = '✓ Sent! We\'ll be in touch shortly.';
   this.style.background = '#27ae60';
-  setTimeout(() => { this.textContent = 'Send Message'; this.style.background = ''; }, 3500);
+  var btn = this;
+  setTimeout(function(){ btn.textContent = 'Send Message'; btn.style.background = ''; }, 3500);
 });
 
 // WHATSAPP WIDGET
-let waOpen = false;
-let waTooltipHidden = false;
+var waOpen = false;
+var waTooltipHidden = false;
 function toggleWA() {
   waOpen = !waOpen;
-  const panel = document.getElementById('waPanel');
-  const tooltip = document.getElementById('waTooltip');
+  var panel = document.getElementById('waPanel');
+  var tooltip = document.getElementById('waTooltip');
   if (waOpen) {
     panel.classList.add('open');
     tooltip.style.display = 'none';
     waTooltipHidden = true;
   } else {
     panel.classList.remove('open');
-    if (!waTooltipHidden) tooltip.style.display = 'block';
   }
 }
 // Auto-show tooltip after 3s, hide after 6s
-setTimeout(() => {
-  const t = document.getElementById('waTooltip');
+setTimeout(function() {
+  var t = document.getElementById('waTooltip');
   if (t && !waTooltipHidden) {
     t.style.display = 'block';
-    setTimeout(() => { if (!waOpen) t.style.display = 'none'; }, 6000);
+    setTimeout(function(){ if (!waOpen) t.style.display = 'none'; }, 6000);
   }
 }, 3000);
-// Initially hide tooltip
-document.getElementById('waTooltip').style.display = 'none';
 </script>
 </body>
 </html>
